@@ -1,0 +1,4 @@
+.footerlink {
+  display: flex;
+  justify-content: space-between;
+}
