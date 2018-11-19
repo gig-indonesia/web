@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
   constructor(props) {
@@ -10,35 +11,35 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="footernav">
-          <a href="/">
+          <Link to="/home">
             <span className="footerIcon">
               <i class="fas fa-home" />
             </span>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link to="/search">
             <span className="footerIcon">
               <i class="fas fa-search" />
             </span>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link to="/add">
             <span className="footerIcon">
               <i class="fas fa-plus" />
             </span>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link to="/gigs">
             <span className="footerIcon">
               <i class="fas fa-music" />
             </span>
-          </a>
+          </Link>
 
-          <a href="/">
+          <Link to="/notif">
             <span className="footerIcon">
               <i class="far fa-bell" />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     );
