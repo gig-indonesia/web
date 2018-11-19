@@ -14,7 +14,7 @@ class Add extends Component {
         </div>
 
         <div className="attributes">
-          <div className="gig-photo">
+          <div className="gig-upload-photo">
             <label htmlFor="imageInput">
               <i className="fas fa-plus" />
             </label>
