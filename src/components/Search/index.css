@@ -1,0 +1,22 @@
+.search-container {
+  background: white;
+  padding: 10px;
+}
+
+.search-container h2 {
+  font-size: 18px;
+}
+
+.normal-button {
+  padding: 5px;
+  color: white;
+  background: #2d9cdb;
+  border-radius: 5px;
+}
+
+.clicked-button {
+  padding: 5px;
+  color: white;
+  background: #0b3249;
+  border-radius: 5px;
+}
