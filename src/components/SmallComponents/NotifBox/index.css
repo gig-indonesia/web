@@ -1,0 +1,34 @@
+.notif-container {
+  display: grid;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 10px;
+  /* box-shadow: 2px 3px #9999; */
+  /* webkit shadow */
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+.date {
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  color: #9999;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.mention {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  text-align: left;
+  font-weight: 200;
+  font-size: 16px;
+}
+hr {
+  border: 0.5px solid #4ca0eb;
+  margin-right: 5px;
+  margin-left: 5px;
+}

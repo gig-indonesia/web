@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Gigs from "./components/Gigs";
 import Search from "./components/Search";
 import Add from "./components/Add";
+import Notifications from "./components/Notifications";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -21,6 +22,7 @@ class App extends Component {
               <Route exact path="/search" component={Search} />
               <Route exact path="/add" component={Add} />
               <Route exact path="/gigs" component={Gigs} />
+              <Route exact path="/notifications" component={Notifications} />
             </Switch>
             <div className="margin-bottom" />
             <Footer />
