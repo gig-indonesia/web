@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer/";
+import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
           <div className="container">
             <Header />
             <Switch>
-              <Route exact path="/header" component={Header} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/footer" component={Footer} />
             </Switch>
             <Footer />
