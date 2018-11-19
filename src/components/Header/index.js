@@ -12,7 +12,7 @@ class Header extends Component {
       <div className="header">
         <h1>GiG</h1>
         <Link to="/profile">
-          <i class="fas fa-user-circle" />
+          <i className="fas fa-user-circle" />
         </Link>
       </div>
     );

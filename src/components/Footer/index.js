@@ -13,31 +13,31 @@ class Footer extends Component {
         <div className="footernav">
           <Link to="/">
             <span className="footerIcon">
-              <i class="fas fa-home" />
+              <i className="fas fa-home" />
             </span>
           </Link>
 
           <Link to="/search">
             <span className="footerIcon">
-              <i class="fas fa-search" />
+              <i className="fas fa-search" />
             </span>
           </Link>
 
           <Link to="/add">
             <span className="footerIcon">
-              <i class="fas fa-plus" />
+              <i className="fas fa-plus" />
             </span>
           </Link>
 
           <Link to="/gigs">
             <span className="footerIcon">
-              <i class="fas fa-music" />
+              <i className="fas fa-music" />
             </span>
           </Link>
 
           <Link to="/notifications">
             <span className="footerIcon">
-              <i class="far fa-bell" />
+              <i className="far fa-bell" />
             </span>
           </Link>
         </div>

@@ -60,3 +60,13 @@
   padding: 20px;
   color: #ffffff;
 }
+.imageInput {
+  display: none;
+}
+.gig-photo {
+  background-color: white;
+  /* margin-left: 20px; */
+  padding: 50px;
+  color: #4ca0eb;
+  border: 3px solid;
+}

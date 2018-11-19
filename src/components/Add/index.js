@@ -14,8 +14,17 @@ class Add extends Component {
         </div>
 
         <div className="attributes">
-          <div>
-            <input type="file" placeholder="Add Photo" />
+          <div className="gig-photo">
+            <label htmlFor="imageInput">
+              <i className="fas fa-plus" />
+            </label>
+            <input
+              id="imageInput"
+              accept="image/*"
+              type="file"
+              placeholder="Add Photo"
+              className="imageInput"
+            />
           </div>
 
           <div>
