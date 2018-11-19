@@ -2,11 +2,61 @@
   padding: 10px;
   width: 95%;
   border: 3px solid #4ca0eb;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 5px;
+  font-weight: bold;
+}
+.gigtitle input::placeholder {
+  color: #4ca0eb;
 }
 
 .attributes {
   display: flex;
-  width: 95px;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.attributes input::placeholder {
+  color: #4ca0eb;
+}
+.attributes input {
+  border: 3px solid #4ca0eb;
+  border-radius: 5px;
+  /* text-align: center; */
+  margin-top: 10px;
+  font-weight: bold;
+}
+.description input {
+  padding: 65px;
+  width: 74%;
+  border: 3px solid #4ca0eb;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.description input::placeholder {
+  color: #4ca0eb;
+}
+
+.googlemap input {
+  padding: 65px;
+  width: 74%;
+  border: 3px solid #4ca0eb;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.googlemap input::placeholder {
+  color: #4ca0eb;
+}
+
+.submit input {
+  background-color: #4ca0eb;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  width: 100%;
+  padding: 20px;
+  color: #ffffff;
 }

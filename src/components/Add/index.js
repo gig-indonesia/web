@@ -15,8 +15,9 @@ class Add extends Component {
 
         <div className="attributes">
           <div>
-            <input type="text" placeholder="Add Photo" />
+            <input type="file" placeholder="Add Photo" />
           </div>
+
           <div>
             <div>
               <input type="text" placeholder="Budget" />
@@ -26,10 +27,16 @@ class Add extends Component {
             </div>
           </div>
         </div>
+        <div className="description">
+          <input type="text" placeholder="Description (mim 50 char) " />
+        </div>
 
-        <input type="text" placeholder="Description (mim 50 char) " />
-        <input type="text" placeholder="Google Map" />
-        <input type="submit" value="Submit" />
+        <div className="googlemap">
+          <input type="text" placeholder="Google Map" />
+        </div>
+        <div className="submit">
+          <input type="submit" value="Submit" />
+        </div>
       </div>
     );
   }
