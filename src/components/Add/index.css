@@ -1,0 +1,12 @@
+.gigtitle input {
+  padding: 10px;
+  width: 95%;
+  border: 3px solid #4ca0eb;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.attributes {
+  display: flex;
+  width: 95px;
+}
