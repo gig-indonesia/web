@@ -10,6 +10,9 @@ class Header extends Component {
     return (
       <div className="header">
         <h1>Gig</h1>
+        <a href="/">
+          <i class="fas fa-user-circle" />
+        </a>
       </div>
     );
   }

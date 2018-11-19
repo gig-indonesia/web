@@ -8,4 +8,11 @@
   right: 0;
   width: 500px;
   margin: 0 auto;
+  background: #2d9cdb;
+  color: white;
+}
+
+.footerIcon {
+  color: white;
+  font-size: 20px;
 }

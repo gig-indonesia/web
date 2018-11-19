@@ -1,7 +1,16 @@
 .header {
   background-color: #4ca0eb;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }
-h1 {
-  margin-left: 10px;
+
+.header i {
+  font-size: 35px;
+}
+
+.header a,
+.header a:hover {
+  color: white;
 }

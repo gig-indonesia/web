@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Footer.css";
+
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -9,11 +10,35 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="footernav">
-          <a href="#">Home</a>
-          <a href="#">Search</a>
-          <a href="#">Add</a>
-          <a href="#">Gig</a>
-          <a href="#">Notif</a>
+          <a href="/">
+            <span className="footerIcon">
+              <i class="fas fa-home" />
+            </span>
+          </a>
+
+          <a href="/">
+            <span className="footerIcon">
+              <i class="fas fa-search" />
+            </span>
+          </a>
+
+          <a href="/">
+            <span className="footerIcon">
+              <i class="fas fa-plus" />
+            </span>
+          </a>
+
+          <a href="/">
+            <span className="footerIcon">
+              <i class="fas fa-music" />
+            </span>
+          </a>
+
+          <a href="/">
+            <span className="footerIcon">
+              <i class="far fa-bell" />
+            </span>
+          </a>
         </div>
       </div>
     );
