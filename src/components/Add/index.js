@@ -14,9 +14,19 @@ class Add extends Component {
         </div>
 
         <div className="attributes">
-          <div>
-            <input type="text" placeholder="Add Photo" />
+          <div className="gig-upload-photo">
+            <label htmlFor="imageInput">
+              <i className="fas fa-plus" />
+            </label>
+            <input
+              id="imageInput"
+              accept="image/*"
+              type="file"
+              placeholder="Add Photo"
+              className="imageInput"
+            />
           </div>
+
           <div>
             <div>
               <input type="text" placeholder="Budget" />
@@ -26,10 +36,16 @@ class Add extends Component {
             </div>
           </div>
         </div>
+        <div className="description">
+          <input type="text" placeholder="Description (mim 50 char) " />
+        </div>
 
-        <input type="text" placeholder="Description (mim 50 char) " />
-        <input type="text" placeholder="Google Map" />
-        <input type="submit" value="Submit" />
+        <div className="googlemap">
+          <input type="text" placeholder="Google Map" />
+        </div>
+        <div className="submit">
+          <input type="submit" value="Submit" />
+        </div>
       </div>
     );
   }
