@@ -15,7 +15,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 500px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -23,6 +24,7 @@
   flex: 1;
   height: 100%;
   overflow-y: auto;
+  background-color: #fff;
 }
 
 .background {
