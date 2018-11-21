@@ -20,18 +20,18 @@ class App extends Component {
         <div className="background">
           <div className="container">
             <Header />
-
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/search" component={Search} />
-              <Route exact path="/add" component={Add} />
-              <Route exact path="/gigs" component={Gigs} />
-              <Route exact path="/notifications" component={Notifications} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/profile" component={Profile} />
-            </Switch>
-            <div className="margin-bottom" />
-
+            <div className="fit">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/add" component={Add} />
+                <Route exact path="/gigs" component={Gigs} />
+                <Route exact path="/notifications" component={Notifications} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/profile" component={Profile} />
+              </Switch>
+              <div className="margin-bottom" />
+            </div>
             <Footer />
           </div>
         </div>
