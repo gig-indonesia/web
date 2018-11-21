@@ -17,7 +17,7 @@ class GigBox extends Component {
           </p>
           <div className="gig-price">
             <span className="price-logo">
-              <i class="fas fa-money-bill" />
+              <i className="fas fa-money-bill" />
             </span>
             <div>Rp.1.000.000</div>
           </div>
