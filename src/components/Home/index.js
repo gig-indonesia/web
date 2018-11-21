@@ -25,7 +25,6 @@ class Home extends Component {
         <h2>New Artists</h2>
         <div className="home-new-artists">
           <div>
-            <h2> Single Item</h2>
             <Slider {...settings}>
               <div>
                 <ArtistBox />
@@ -43,7 +42,9 @@ class Home extends Component {
                 <ArtistBox />
               </div>
               <div>
-                <div>SEE MORE</div>
+                <a href="/search/artists">
+                  <div className="home-see-more">See More Artists</div>
+                </a>
               </div>
             </Slider>
           </div>

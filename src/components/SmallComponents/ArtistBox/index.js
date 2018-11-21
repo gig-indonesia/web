@@ -6,7 +6,7 @@ class ArtistBox extends Component {
   render() {
     return (
       <div>
-        <img src={artistImg} alt="artist" />
+        <img src={artistImg} alt="artist" width="100%" />
       </div>
     );
   }
