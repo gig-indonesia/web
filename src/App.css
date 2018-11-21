@@ -2,9 +2,13 @@
   margin: 0;
   padding: 0;
 }
-
+@media (min-width: 500px) {
+  .container {
+    width: 600px;
+  }
+}
 .container {
-  width: 500px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 .background {
@@ -12,4 +16,9 @@
 }
 .margin-bottom {
   height: 75px;
+}
+
+.content {
+  background: white;
+  padding: 2%;
 }

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
+import ArtistBox from "../SmallComponents/ArtistBox";
+import Slider from "react-slick";
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -10,9 +13,42 @@ class Home extends Component {
     };
   }
   render() {
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 1,
+      slidesToShow: 5,
+      slidesToScroll: 1
+    };
     return (
       <div className="home-container">
         <h2>New Artists</h2>
+        <div className="home-new-artists">
+          <div>
+            <h2> Single Item</h2>
+            <Slider {...settings}>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <div>SEE MORE</div>
+              </div>
+            </Slider>
+          </div>
+        </div>
+
         <h2>New Gigs</h2>
         <GigBox />
         <GigBox />

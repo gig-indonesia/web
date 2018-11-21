@@ -17,13 +17,15 @@ class App extends Component {
         <div className="background">
           <div className="container">
             <Header />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/search" component={Search} />
-              <Route exact path="/add" component={Add} />
-              <Route exact path="/gigs" component={Gigs} />
-              <Route exact path="/notifications" component={Notifications} />
-            </Switch>
+            <div className="content">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/add" component={Add} />
+                <Route exact path="/gigs" component={Gigs} />
+                <Route exact path="/notifications" component={Notifications} />
+              </Switch>
+            </div>
             <div className="margin-bottom" />
             <Footer />
           </div>

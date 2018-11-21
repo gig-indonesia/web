@@ -1,3 +1,8 @@
+@media (min-width: 900px) {
+  .footernav {
+    width: 600px;
+  }
+}
 .footernav {
   display: flex;
   justify-content: space-around;
@@ -6,10 +11,10 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 500px;
   margin: 0 auto;
   background: #2d9cdb;
   color: white;
+  max-width: 100%;
 }
 
 .footerIcon {
