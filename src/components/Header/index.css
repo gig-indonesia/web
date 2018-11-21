@@ -14,3 +14,7 @@
 .header a:hover {
   color: white;
 }
+.body-container {
+  background-color: #4ca0eb;
+  height: 100%;
+}
