@@ -7,9 +7,11 @@ import Gigs from "./components/Gigs";
 import Search from "./components/Search";
 import Add from "./components/Add";
 import Notifications from "./components/Notifications";
+
 import Profile from "./components/Profile";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./components/Login";
 
 class App extends Component {
   render() {
@@ -18,15 +20,18 @@ class App extends Component {
         <div className="background">
           <div className="container">
             <Header />
+
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/search" component={Search} />
               <Route exact path="/add" component={Add} />
               <Route exact path="/gigs" component={Gigs} />
               <Route exact path="/notifications" component={Notifications} />
+              <Route exact path="/login" component={Login} />
               <Route exact path="/profile" component={Profile} />
             </Switch>
             <div className="margin-bottom" />
+
             <Footer />
           </div>
         </div>

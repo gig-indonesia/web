@@ -2,14 +2,33 @@
   margin: 0;
   padding: 0;
 }
+@media (min-width: 500px) {
+  .container {
+    width: 600px;
+  }
+}
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 500px;
   margin: 0 auto;
 }
+
+.fit {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+
 .background {
   background-color: #eeeeee;
 }
 .margin-bottom {
   height: 75px;
+}
+
+.content {
+  background: white;
+  padding: 2% 2% 0% 2%;
 }

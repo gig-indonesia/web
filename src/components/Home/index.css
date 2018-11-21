@@ -1,8 +1,17 @@
-.home-container {
-  background: white;
-  padding: 15px;
-}
-
 .home-container h2 {
   font-size: 18px;
 }
+
+.home-see-more {
+  margin: 35% 0 30% 30%;
+}
+
+.home-new-artists {
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";

@@ -1,6 +1,6 @@
 .gig-container {
   display: grid;
-  grid-template: 100px / 1fr 2fr;
+  grid-template: 1fr / 1fr 2fr;
   margin: 10px 0;
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
+// import Login from "./Components/Login";
 
 class Header extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Header extends Component {
         <Link to="/profile">
           <i className="fas fa-user-circle" />
         </Link>
+        {/* <Login /> */}
       </div>
     );
   }

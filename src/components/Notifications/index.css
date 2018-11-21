@@ -2,7 +2,7 @@
   display: grid;
   border: 1px solid white;
   border-radius: 5px;
-  box-shadow: 3px;
+  /* box-shadow: 3px; */
   background-color: white;
   margin-top: 10px;
 }
