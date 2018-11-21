@@ -4,10 +4,10 @@
   border: 3px solid #4ca0eb;
   margin-top: 5px;
   border-radius: 5px;
-  font-weight: bold;
 }
 .gigtitle input::placeholder {
   color: #4ca0eb;
+  font-family: "roboto";
 }
 
 .attributes {
@@ -18,36 +18,42 @@
 }
 .attributes input::placeholder {
   color: #4ca0eb;
+  font-family: "roboto";
 }
 .attributes input {
   border: 3px solid #4ca0eb;
   border-radius: 5px;
   /* text-align: center; */
   margin-top: 10px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  width: 200px;
+  height: 30px;
+  padding: 10px;
 }
 .description input {
   padding: 65px;
-  width: 74%;
+  width: 73%;
   border: 3px solid #4ca0eb;
   margin-top: 5px;
   border-radius: 5px;
-  font-weight: bold;
 }
+
 .description input::placeholder {
   color: #4ca0eb;
+  font-family: "roboto";
 }
 
 .googlemap input {
   padding: 65px;
-  width: 74%;
+  width: 73%;
   border: 3px solid #4ca0eb;
   margin-top: 5px;
   border-radius: 5px;
-  font-weight: bold;
 }
 .googlemap input::placeholder {
   color: #4ca0eb;
+  font-family: "roboto";
+  text-align: left;
 }
 
 .submit input {
@@ -55,13 +61,14 @@
   text-align: center;
   border-radius: 5px;
   margin-top: 5px;
-  font-weight: bold;
   width: 100%;
   padding: 20px;
   color: #ffffff;
+  font-family: "roboto";
 }
 .imageInput {
   display: none;
+  justify-content: center;
 }
 .gig-upload-photo {
   background-color: white;
