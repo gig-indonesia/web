@@ -4,8 +4,6 @@
   border-radius: 5px;
   background-color: white;
   margin-top: 10px;
-  /* box-shadow: 2px 3px #9999; */
-  /* webkit shadow */
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;

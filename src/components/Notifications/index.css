@@ -2,7 +2,6 @@
   display: grid;
   border: 1px solid white;
   border-radius: 5px;
-  /* box-shadow: 3px; */
   background-color: white;
   margin-top: 10px;
 }
@@ -26,4 +25,8 @@ hr {
   border: 0.5px solid #4ca0eb;
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.container-notif {
+  padding: 10px;
 }

@@ -12,6 +12,7 @@ import Profile from "./components/Profile";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 class App extends Component {
   render() {
@@ -28,11 +29,15 @@ class App extends Component {
                 <Route exact path="/gigs" component={Gigs} />
                 <Route exact path="/notifications" component={Notifications} />
                 <Route exact path="/login" component={Login} />
+
+                <Route exact path="/register" component={Register} />
+
                 <Route exact path="/profile" component={Profile} />
+
               </Switch>
               <div className="margin-bottom" />
             </div>
-            <Footer />
+            <Route path="/" component={Footer} />
           </div>
         </div>
       </Router>

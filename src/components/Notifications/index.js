@@ -5,7 +5,7 @@ import "./index.css";
 class Notification extends Component {
   render() {
     return (
-      <div>
+      <div className="container-notif">
         <NotifBox />
         <NotifBox />
         <NotifBox />
