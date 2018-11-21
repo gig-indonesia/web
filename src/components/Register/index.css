@@ -17,8 +17,10 @@ input {
   border-radius: 5px;
 }
 
-.type-in {
+input {
   margin-top: 20px;
+  text-align: left;
+  padding-left: 30px;
 }
 
 form {

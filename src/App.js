@@ -9,6 +9,7 @@ import Add from "./components/Add";
 import Notifications from "./components/Notifications";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
                 <Route exact path="/gigs" component={Gigs} />
                 <Route exact path="/notifications" component={Notifications} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
               </Switch>
             </div>
             <Route path="/" component={Footer} />

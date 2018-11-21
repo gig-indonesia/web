@@ -1,6 +1,9 @@
+.home-container {
+  padding: 10px;
+}
+
 .home-container h2 {
   font-size: 18px;
-  padding: 10px;
 }
 
 .home-see-more {
