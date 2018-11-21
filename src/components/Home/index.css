@@ -9,6 +9,8 @@
 .home-new-artists {
   margin: 10px;
   border-radius: 5px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @import "~slick-carousel/slick/slick.css";
