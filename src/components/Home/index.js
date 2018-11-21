@@ -42,6 +42,18 @@ class Home extends Component {
                 <ArtistBox />
               </div>
               <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
+                <ArtistBox />
+              </div>
+              <div>
                 <a href="/search/artists">
                   <div className="home-see-more">See More Artists</div>
                 </a>
