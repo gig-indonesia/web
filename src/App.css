@@ -2,7 +2,16 @@
   margin: 0;
   padding: 0;
 }
-
+@media (min-width: 500px) {
+  .container {
+    width: 600px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -21,4 +30,9 @@
 }
 .margin-bottom {
   height: 75px;
+}
+
+.content {
+  background: white;
+  padding: 2%;
 }
