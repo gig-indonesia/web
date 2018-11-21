@@ -7,11 +7,7 @@
     width: 600px;
   }
 }
-@media (max-width: 500px) {
-  .container {
-    width: 100%;
-  }
-}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -36,5 +32,5 @@
 
 .content {
   background: white;
-  padding: 2%;
+  padding: 2% 2% 0% 2%;
 }
