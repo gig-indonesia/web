@@ -1,5 +1,9 @@
 .gig-container {
   display: grid;
   grid-template: 100px / 1fr 3fr;
+  border: 1px solid white;
   margin: 10px 0;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }

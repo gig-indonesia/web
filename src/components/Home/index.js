@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
+
 class Home extends Component {
   constructor(props) {
     super(props);
