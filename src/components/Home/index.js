@@ -63,7 +63,6 @@ class Home extends Component {
             </Slider>
           </div>
         </div>
-
         <h2>New Gigs</h2>
         <GigBox />
         <GigBox />
@@ -74,7 +73,11 @@ class Home extends Component {
         <GigBox />
         <GigBox />
         <GigBox />
-        <button>See More</button>
+        <div className="home-gigs-see-more">
+          <button>
+            See More Gigs <i class="fas fa-arrow-right" />
+          </button>
+        </div>
       </div>
     );
   }

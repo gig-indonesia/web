@@ -12,7 +12,7 @@ class Register extends Component {
       <div className="login-container">
         <form>
           <div>
-            <div className="type-in">
+            <div className="register-type-in">
               <input name="email" placeholder="email" type="text" />
               <input name="user name" placeholder="User Name" type="text" />
               <input name="name" placeholder="Name" type="type" />
@@ -24,10 +24,10 @@ class Register extends Component {
               />
             </div>
 
-            <button>Submit</button>
+            <button className="register-button">Submit</button>
 
             <div className="small-link">
-              <Link to="#">Login</Link>
+              <Link to="/login">Login</Link>
             </div>
           </div>
         </form>

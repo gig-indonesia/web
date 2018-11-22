@@ -11,7 +11,10 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1>GiG</h1>
+        <Link to="/">
+          <h1>GiG</h1>
+        </Link>
+
         <Link to="/profile">
           <i className="fas fa-user-circle" />
         </Link>

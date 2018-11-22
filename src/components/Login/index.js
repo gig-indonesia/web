@@ -12,17 +12,17 @@ class Login extends Component {
       <div className="login-container">
         <form>
           <div>
-            <div className="type-in">
+            <div className="login-type-in">
               <input
                 name="email or user name"
                 placeholder="email or user name"
                 type="text"
               />
             </div>
-            <div className="type-in">
+            <div className="login-type-in">
               <input name="password" placeholder="password" type="password" />
             </div>
-            <button>Submit</button>
+            <button className="login-button">Login</button>
 
             <div className="small-link">
               <Link to="#">Sign Up Now!</Link>

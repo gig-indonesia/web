@@ -1,21 +1,63 @@
-.search-container {
-  background: white;
-}
-
 .search-container h2 {
   font-size: 18px;
+  margin-bottom: 5px;
 }
 
-.normal-button {
+.search-type-button {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.search-normal-button {
   padding: 5px;
   color: white;
   background: #2d9cdb;
   border-radius: 5px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
 }
 
-.clicked-button {
+.search-clicked-button {
   padding: 5px;
   color: white;
   background: #0b3249;
   border-radius: 5px;
+  flex: 1;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-gigs,
+.search-artists {
+  display: flex;
+  justify-content: center;
+}
+
+.search-gigs button,
+.search-artists button {
+  color: #2d9cdb;
+}
+
+.search-container input {
+  width: 80%;
+  margin: 10px 0 5px;
+  background: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.search-gigs button,
+.search-artists button {
+  margin: 10px 0 5px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-left: none;
+  height: 100%;
+  cursor: pointer;
 }

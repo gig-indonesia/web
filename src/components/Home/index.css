@@ -1,9 +1,19 @@
-.home-container {
-  padding: 10px;
-}
-
 .home-container h2 {
   font-size: 18px;
+}
+
+.home-gigs-see-more button {
+  width: 100%;
+  background: #4ca0eb;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.home-gigs-see-more {
+  display: flex;
+  justify-content: center;
 }
 
 .home-artists-top {
