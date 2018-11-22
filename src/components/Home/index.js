@@ -3,6 +3,7 @@ import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
 import ArtistBox from "../SmallComponents/ArtistBox";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   constructor(props) {
@@ -22,7 +23,13 @@ class Home extends Component {
     };
     return (
       <div className="home-container">
-        <h2>New Artists</h2>
+        <div className="home-artists-top">
+          <h2>New Artists</h2>
+          <div>
+            <Link to="/search/artists">See More</Link>
+          </div>
+        </div>
+
         <div className="home-new-artists">
           <div>
             <Slider {...settings}>
@@ -53,11 +60,6 @@ class Home extends Component {
               <div>
                 <ArtistBox />
               </div>
-              <div>
-                <a href="/search/artists">
-                  <div className="home-see-more">See More Artists</div>
-                </a>
-              </div>
             </Slider>
           </div>
         </div>
@@ -72,6 +74,7 @@ class Home extends Component {
         <GigBox />
         <GigBox />
         <GigBox />
+        <button>See More</button>
       </div>
     );
   }
