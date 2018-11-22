@@ -5,7 +5,7 @@ import artistImg from "../../artist.jpeg";
 class ArtistBox extends Component {
   render() {
     return (
-      <div>
+      <div className="artist-box-container">
         <img src={artistImg} alt="artist" width="100%" />
       </div>
     );
