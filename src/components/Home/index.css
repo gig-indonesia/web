@@ -36,5 +36,9 @@
   overflow: hidden;
 }
 
+.home-new-artists img {
+  border-radius: 50%;
+}
+
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
