@@ -8,7 +8,7 @@ import Search from "./components/Search";
 import Add from "./components/Add";
 import Notifications from "./components/Notifications";
 import Profile from "./components/Profile";
-import GoogleMap from "./components/GoogleMap";
+import CreatedGig from "./components/CreatedGig";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -30,7 +30,7 @@ class App extends Component {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/profile" component={Profile} />
-                <Route exact path="/map" component={GoogleMap} />
+                <Route exact path="/gigs/1" component={CreatedGig} />
               </Switch>
             </div>
             <Route path="/" component={Footer} />

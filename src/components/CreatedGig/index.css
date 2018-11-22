@@ -1,0 +1,52 @@
+.gig-image {
+  position: relative;
+}
+.gig-image img {
+  width: 100%;
+}
+
+.gig-image h1 {
+  font-size: 18px;
+}
+
+.gig-info {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  color: white;
+}
+
+.gig-budget {
+  font-size: 16px;
+}
+
+.gig-info time {
+  font-size: 14px;
+}
+
+.gig-desc,
+.gig-location {
+  text-align: justify;
+  padding: 15px;
+}
+
+.gig-location {
+  color: #777;
+}
+
+.single-gig-container h4 {
+  margin: 10px;
+}
+.single-gig-container button {
+  margin: 10px 0 5px;
+  background: #4ca0eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
