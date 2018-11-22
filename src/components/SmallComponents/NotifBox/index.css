@@ -3,16 +3,16 @@
   border: 1px solid white;
   border-radius: 5px;
   background-color: white;
-  margin-top: 10px;
+  margin-bottom: 10px;
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
+  padding: 10px;
 }
 .date {
-  padding-top: 10px;
-  padding-right: 10px;
-  text-align: right;
-  color: #9999;
+  padding: 10px;
+  text-align: left;
+  color: #555;
   font-size: 12px;
   margin-bottom: 2px;
 }
