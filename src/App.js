@@ -12,6 +12,7 @@ import CreatedGig from "./components/CreatedGig";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import GigApplicants from "./components/GigApplicants";
 
 class App extends Component {
   render() {
@@ -31,6 +32,11 @@ class App extends Component {
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/gigs/1" component={CreatedGig} />
+                <Route
+                  exact
+                  path="/gigs/1/applicants"
+                  component={GigApplicants}
+                />
               </Switch>
             </div>
             <Route path="/" component={Footer} />

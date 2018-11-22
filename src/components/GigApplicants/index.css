@@ -1,0 +1,44 @@
+.applied-gig-container {
+  padding: 15px;
+}
+
+.applied-gig-container h1 {
+  font-size: 20px;
+}
+
+.applied-gig-container h4 {
+  color: #333;
+}
+
+.applied-applicant-div div {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.applied-gig-artists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.applied-gig-artists div {
+  width: 33.33%;
+}
+
+.applied-gig-approval {
+  display: flex;
+}
+.artist-box {
+  display: relative;
+}
+.artist-box div {
+  width: 100%;
+}
+
+.applied-gig-approval {
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  background: red;
+  width: 100%;
+  margin: 0 auto;
+}
