@@ -8,42 +8,48 @@ class Add extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="gigtitle">
-          <input type="text" placeholder="Gig Title" />
+      <div className="add-container">
+        <h2>Add New Gig</h2>
+        <div className="add-gig-title">
+          <input type="text" placeholder="Gig title" />
         </div>
 
-        <div className="attributes">
-          <div className="gig-upload-photo">
-            <label htmlFor="imageInput">
+        <div className="add-gig-attributes">
+          <div className="add-gig-photo">
+            <label htmlFor="add-gig-image" className="add-photo-icon">
               <i className="fas fa-plus" />
+              <p>Add Photo</p>
             </label>
-            <input
-              id="imageInput"
-              accept="image/*"
-              type="file"
-              placeholder="Add Photo"
-              className="imageInput"
-            />
           </div>
 
-          <div>
+          <input
+            id="add-gig-image"
+            accept="image/*"
+            type="file"
+            placeholder="Add photo"
+            className="add-gig-image"
+          />
+
+          <div className="add-right-input">
             <div>
               <input type="text" placeholder="Budget" />
             </div>
             <div>
-              <input type="text" placeholder="Date & Time" />
+              <input type="date" placeholder="Time" />
             </div>
           </div>
         </div>
-        <div className="description">
-          <input type="text" placeholder="Description (mim 50 char) " />
-        </div>
+        <textarea
+          className="add-gig-description"
+          maxLength="255"
+          minLength="30"
+          placeholder="Description (30 - 255 characters)"
+        />
 
-        <div className="googlemap">
-          <input type="text" placeholder="Google Map" />
+        <div className="add-gig-location">
+          <input type="text" placeholder="Location" />
         </div>
-        <div className="submit">
+        <div className="add-gig-submit">
           <input type="submit" value="Submit" />
         </div>
       </div>
