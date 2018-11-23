@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import img from "../../rest.jpg";
+import img from "../../../asset/rest.jpg";
 
 class GigBox extends Component {
   render() {
