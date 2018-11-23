@@ -3,17 +3,22 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px 10px;
+}
+
+.header h1 {
+  font-size: 24px;
 }
 
 .header i {
-  font-size: 35px;
+  font-size: 24px;
 }
 
 .header a,
 .header a:hover {
   color: white;
 }
+
 .body-container {
   background-color: #4ca0eb;
   height: 100%;
