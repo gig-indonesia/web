@@ -23,6 +23,30 @@ class Profile extends Component {
             </div>
           </div>
         </div>
+        <div className="container-info">
+          <p className="title-description">About</p>
+          <hr />
+          <p className="detail-description">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,{" "}
+          </p>
+        </div>
+        <div className="container-info">
+          <p className="title-description">About</p>
+          <hr />
+          <p className="detail-description">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,{" "}
+          </p>
+        </div>
+        <div className="container-info">
+          <p className="title-description">About</p>
+          <hr />
+          <p className="detail-description">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,{" "}
+          </p>
+        </div>
       </div>
     );
   }

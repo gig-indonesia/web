@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Rest from "../rest.jpg";
+import Rest from "../../asset/rest.jpg";
 import "./index.css";
 class CreatedGig extends Component {
   constructor(props) {
