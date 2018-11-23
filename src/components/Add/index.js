@@ -27,6 +27,15 @@ class Add extends Component {
       .catch(error => console.error("Error", error));
   };
   render() {
+    const gigDate = new Date();
+    gigDate.setDate(gigDate.getDate());
+    const date = gigDate.toISOString().substr(0, 10);
+
+    const gigHour = new Date();
+    gigHour.setHours(gigHour.getHours() + 7);
+    const hour = gigHour.toISOString().substr(11, 8);
+    console.log(hour);
+
     return (
       <div className="add-container">
         <h2>Add New Gig</h2>
@@ -55,7 +64,10 @@ class Add extends Component {
               <input type="text" placeholder="Budget" />
             </div>
             <div>
-              <input type="date" placeholder="Time" />
+              <input type="date" placeholder="Time" defaultValue={date} />
+            </div>
+            <div>
+              <input type="time" placeholder="Time" defaultValue={hour} />
             </div>
           </div>
         </div>

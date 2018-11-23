@@ -1,5 +1,6 @@
 .add-container input[type="text"],
 .add-container input[type="date"],
+.add-container input[type="time"],
 .add-container textarea,
 .add-gig-photo {
   width: 100%;
@@ -72,7 +73,7 @@
 .add-gig-attributes label {
   display: inline-block;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
 .add-gig-image {
