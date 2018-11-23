@@ -35,10 +35,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>
@@ -46,10 +46,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>
@@ -57,10 +57,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>
@@ -68,10 +68,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>
@@ -79,10 +79,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>
@@ -90,10 +90,10 @@ class GigApplicants extends Component {
               <ArtistBox />
               <div className="applied-gig-approval">
                 <div className="applied-approve">
-                  <i class="fas fa-check" />
+                  <i className="fas fa-check" />
                 </div>
                 <div className="applied-reject">
-                  <i class="fas fa-times" />
+                  <i className="fas fa-times" />
                 </div>
               </div>
             </div>

@@ -13,36 +13,44 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import GigApplicants from "./components/GigApplicants";
+import { Provider } from "react-redux";
+import store from "./store";
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="background">
-          <div className="container">
-            <Header />
-            <div className="fit">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/search" component={Search} />
-                <Route exact path="/add" component={Add} />
-                <Route exact path="/gigs" component={Gigs} />
-                <Route exact path="/notifications" component={Notifications} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/profile" component={Profile} />
-                <Route exact path="/gigs/1" component={CreatedGig} />
-                <Route
-                  exact
-                  path="/gigs/1/applicants"
-                  component={GigApplicants}
-                />
-              </Switch>
+      <Provider store={store}>
+        <Router>
+          <div className="background">
+            <div className="container">
+              <Header />
+              <div className="fit">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/search" component={Search} />
+                  <Route exact path="/add" component={Add} />
+                  <Route exact path="/gigs" component={Gigs} />
+                  <Route
+                    exact
+                    path="/notifications"
+                    component={Notifications}
+                  />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/gigs/1" component={CreatedGig} />
+                  <Route
+                    exact
+                    path="/gigs/1/applicants"
+                    component={GigApplicants}
+                  />
+                </Switch>
+              </div>
+              <Route path="/" component={Footer} />
             </div>
-            <Route path="/" component={Footer} />
           </div>
-        </div>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }

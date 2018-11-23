@@ -37,7 +37,12 @@
 }
 
 .home-new-artists img {
-  border-radius: 50%;
+  border-radius: 5px;
+}
+
+.home-new-artists .artist-box-container {
+  margin-right: 10%;
+  height: 125px;
 }
 
 @import "~slick-carousel/slick/slick.css";
