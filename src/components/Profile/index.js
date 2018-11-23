@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
+import adamimg from "../../asset/adam.jpg";
+import concertimg from "../../asset/concert.jpg";
 
 class Profile extends Component {
   constructor(props) {
@@ -8,25 +10,18 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="artis-name">
-          <input type="text" placeholder="Artist Name" />
-        </div>
-
-        <div>
-          <input type="text" placeholder="Add Photo" />
-        </div>
-
-        <div>
-          <input type="text" placeholder="Description (min 50 char)" />
-        </div>
-
-        <div>
-          <input type="text" placeholder="Video" />
-        </div>
-
-        <div>
-          <input type="submit" placeholder="Submit" />
+      <div className="profile-container">
+        <img className="profile-cover" src={concertimg} alt="concert" />
+        <div className="profile-content">
+          <div className="avatar-container">
+            <img className="profile-avatar" src={adamimg} alt="adam" />
+            <div>
+              <h3>The Adam's</h3>
+            </div>
+            <div>
+              <p>Solo Musician</p>
+            </div>
+          </div>
         </div>
       </div>
     );
