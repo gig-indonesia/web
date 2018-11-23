@@ -31,31 +31,71 @@ class GigApplicants extends Component {
             at this gig
           </div>
           <div className="applied-gig-artists">
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
               <div className="applied-gig-approval">
-                <div>
+                <div className="applied-approve">
                   <i class="fas fa-check" />
                 </div>
-                <div>
+                <div className="applied-reject">
                   <i class="fas fa-times" />
                 </div>
               </div>
             </div>
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
+              <div className="applied-gig-approval">
+                <div className="applied-approve">
+                  <i class="fas fa-check" />
+                </div>
+                <div className="applied-reject">
+                  <i class="fas fa-times" />
+                </div>
+              </div>
             </div>
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
+              <div className="applied-gig-approval">
+                <div className="applied-approve">
+                  <i class="fas fa-check" />
+                </div>
+                <div className="applied-reject">
+                  <i class="fas fa-times" />
+                </div>
+              </div>
             </div>
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
+              <div className="applied-gig-approval">
+                <div className="applied-approve">
+                  <i class="fas fa-check" />
+                </div>
+                <div className="applied-reject">
+                  <i class="fas fa-times" />
+                </div>
+              </div>
             </div>
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
+              <div className="applied-gig-approval">
+                <div className="applied-approve">
+                  <i class="fas fa-check" />
+                </div>
+                <div className="applied-reject">
+                  <i class="fas fa-times" />
+                </div>
+              </div>
             </div>
-            <div className="artist-box">
+            <div className="applied-artist-box">
               <ArtistBox />
+              <div className="applied-gig-approval">
+                <div className="applied-approve">
+                  <i class="fas fa-check" />
+                </div>
+                <div className="applied-reject">
+                  <i class="fas fa-times" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
