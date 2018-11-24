@@ -34,7 +34,6 @@ class Add extends Component {
     const gigHour = new Date();
     gigHour.setHours(gigHour.getHours() + 7);
     const hour = gigHour.toISOString().substr(11, 8);
-    console.log(hour);
 
     return (
       <div className="add-container">
@@ -64,7 +63,7 @@ class Add extends Component {
               <input type="text" placeholder="Budget" />
             </div>
             <div>
-              <input type="date" placeholder="Time" defaultValue={date} />
+              <input type="date" placeholder="Date" defaultValue={date} />
             </div>
             <div>
               <input type="time" placeholder="Time" defaultValue={hour} />
