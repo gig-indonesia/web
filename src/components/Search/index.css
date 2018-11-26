@@ -66,3 +66,11 @@
   height: 100%;
   cursor: pointer;
 }
+
+.search-gigs-results {
+  display: flex;
+}
+
+.search-gigs-results div {
+  margin: 5px;
+}

@@ -5,12 +5,16 @@ import ArtistBox from "../SmallComponents/ArtistBox";
 import { connect } from "react-redux";
 import { fetchDataArtists } from "../../action/newArtistsAction";
 import { fetchDataGigs } from "../../action/newGigsAction";
+import { searchArtists } from "../../action/searchArtistsAction";
+import { searchGigs } from "../../action/searchGigsReducer";
 
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "gigs"
+      search: "gigs",
+      searchGigsInput: "",
+      searchArtistsInput: ""
     };
   }
 
@@ -18,6 +22,20 @@ class Search extends Component {
     this.setState({
       search: e.target.value
     });
+  };
+
+  handleOnChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSearchGigs = e => {
+    this.props.searchGigs(this.state.searchGigsInput);
+  };
+
+  handleSearchArtists = e => {
+    this.props.searchArtists(this.state.searchArtistsInput);
   };
 
   componentDidMount() {
@@ -76,18 +94,21 @@ class Search extends Component {
               <div className="search-artists">
                 <input
                   type="text"
-                  name="search-artists-input"
+                  name="searchArtistsInput"
                   placeholder="search artists"
+                  onChange={this.handleOnChange}
                 />
-                <button>
+                <button onClick={this.handleSearchArtists}>
                   <i className="fas fa-search" />
                 </button>
               </div>
-              {this.props.newArtists.map((artist, index) => (
-                <div key={`artist-${index}`}>
-                  <ArtistBox newArtists={artist} />
-                </div>
-              ))}
+              <div className="search-gigs-results">
+                {this.props.newArtists.map((artist, index) => (
+                  <div key={`artist-${index}`}>
+                    <ArtistBox newArtists={artist} />
+                  </div>
+                ))}
+              </div>
             </React.Fragment>
           )}
           {this.state.search === "gigs" && (
@@ -95,10 +116,11 @@ class Search extends Component {
               <div className="search-gigs">
                 <input
                   type="text"
-                  name="search-gigs-input"
+                  name="searchGigsInput"
                   placeholder="search gigs"
+                  onChange={this.handleOnChange}
                 />
-                <button>
+                <button onClick={this.handleSearchGigs}>
                   <i className="fas fa-search" />
                 </button>
               </div>
@@ -108,15 +130,6 @@ class Search extends Component {
             </React.Fragment>
           )}
         </div>
-        {/* <GigBox /> 
-        <GigBox />
-        <GigBox />
-        <GigBox />
-        <GigBox />
-        <GigBox />
-        <GigBox />
-        <GigBox />
-        <GigBox /> */}
       </div>
     );
   }
@@ -129,7 +142,7 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchDataArtists, fetchDataGigs }
+  { fetchDataArtists, fetchDataGigs, searchArtists, searchGigs }
 )(Search);
 
 // export default Search;

@@ -1,0 +1,20 @@
+import { FETCH_DATA_SEARCH_GIGS } from "./types";
+import axios from "axios";
+
+export const searchGigs = query => dispatch => {
+  axios
+    .get(`https://api-gig.herokuapp.com/createdgig?name=${query}`)
+    .then(res => {
+      console.log("search gigs");
+      dispatch({
+        type: FETCH_DATA_SEARCH_GIGS,
+        payload: res.data
+      });
+    })
+    .catch(err =>
+      dispatch({
+        type: FETCH_DATA_SEARCH_GIGS,
+        payload: []
+      })
+    );
+};
