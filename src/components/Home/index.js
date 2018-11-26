@@ -14,10 +14,9 @@ class Home extends Component {
     this.state = {};
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.props.fetchDataArtists();
     this.props.fetchDataGigs();
-    console.log(this.props.newGigs);
   }
 
   render() {

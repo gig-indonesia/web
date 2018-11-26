@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
 import ArtistBox from "../SmallComponents/ArtistBox";
+import { connect } from "react-redux";
+import { fetchDataArtists } from "../../action/newArtistsAction";
+import { fetchDataGigs } from "../../action/newGigsAction";
 
 class Search extends Component {
   constructor(props) {
@@ -16,6 +19,11 @@ class Search extends Component {
       search: e.target.value
     });
   };
+
+  componentDidMount() {
+    this.props.fetchDataArtists();
+    this.props.fetchDataGigs();
+  }
 
   render() {
     return (
@@ -75,7 +83,11 @@ class Search extends Component {
                   <i className="fas fa-search" />
                 </button>
               </div>
-              <ArtistBox />
+              {this.props.newArtists.map((artist, index) => (
+                <div key={`artist-${index}`}>
+                  <ArtistBox newArtists={artist} />
+                </div>
+              ))}
             </React.Fragment>
           )}
           {this.state.search === "gigs" && (
@@ -90,7 +102,9 @@ class Search extends Component {
                   <i className="fas fa-search" />
                 </button>
               </div>
-              <GigBox />
+              {this.props.newGigs.map((gig, index) => (
+                <GigBox key={`gigs-${index}`} newGigs={gig} />
+              ))}
             </React.Fragment>
           )}
         </div>
@@ -108,4 +122,14 @@ class Search extends Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => ({
+  newArtists: state.newArtists.newArtists,
+  newGigs: state.newGigs.newGigs
+});
+
+export default connect(
+  mapStateToProps,
+  { fetchDataArtists, fetchDataGigs }
+)(Search);
+
+// export default Search;
