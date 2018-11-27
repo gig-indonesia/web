@@ -4,14 +4,37 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
 } from "react-places-autocomplete";
+import axios from "axios";
+
+const gigDate = new Date();
+gigDate.setDate(gigDate.getDate());
+const date = gigDate.toISOString().substr(0, 10);
+
+const gigHour = new Date();
+gigHour.setHours(gigHour.getHours() + 7);
+const hour = gigHour.toISOString().substr(11, 8);
 
 class Add extends Component {
   constructor(props) {
     super(props);
-    this.state = { address: "", latLng: "" };
+    this.state = {
+      title: "",
+      budget: "",
+      date: date,
+      time: hour,
+      description: "",
+      address: "",
+      latLng: "",
+      photo: null
+    };
   }
 
-  handleChange = address => {
+  handleOnChange = e => {
+    console.log(e);
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleLocation = address => {
     this.setState({ address });
   };
 
@@ -26,20 +49,50 @@ class Add extends Component {
       })
       .catch(error => console.error("Error", error));
   };
+
+  handleSubmit = async e => {
+    const data = await new FormData();
+
+    await data.append(
+      "user_data",
+      JSON.stringify({
+        title: this.state.title,
+        budget: this.state.budget,
+        date: this.state.date,
+        time: this.state.time,
+        description: this.state.description,
+        address: this.state.address,
+        latLng: this.state.latLng,
+        hostId: 1
+      })
+    );
+
+    await data.append("user_image", this.state.image);
+    console.log(data);
+    axios
+      .post("https://gig-id.herokuapp.com/gigs", data, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
+      .then(res => {
+        this.getData();
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
-    const gigDate = new Date();
-    gigDate.setDate(gigDate.getDate());
-    const date = gigDate.toISOString().substr(0, 10);
-
-    const gigHour = new Date();
-    gigHour.setHours(gigHour.getHours() + 7);
-    const hour = gigHour.toISOString().substr(11, 8);
-
     return (
       <div className="add-container">
         <h2>Add New Gig</h2>
         <div className="add-gig-title">
-          <input type="text" placeholder="Gig title" />
+          <input
+            type="text"
+            placeholder="Gig title"
+            name="title"
+            onChange={this.handleOnChange}
+            value={this.state.title}
+          />
         </div>
 
         <div className="add-gig-attributes">
@@ -56,17 +109,37 @@ class Add extends Component {
             type="file"
             placeholder="Add photo"
             className="add-gig-image"
+            onChange={this.handleOnChange}
+            value={this.state.image}
           />
 
           <div className="add-right-input">
             <div>
-              <input type="text" placeholder="Budget" />
+              <input
+                type="text"
+                placeholder="Budget"
+                name="budget"
+                onChange={this.handleOnChange}
+                value={this.state.budget}
+              />
             </div>
             <div>
-              <input type="date" placeholder="Date" defaultValue={date} />
+              <input
+                type="date"
+                placeholder="Date"
+                name="date"
+                onChange={this.handleOnChange}
+                value={this.state.date}
+              />
             </div>
             <div>
-              <input type="time" placeholder="Time" defaultValue={hour} />
+              <input
+                type="time"
+                placeholder="Time"
+                name="time"
+                onChange={this.handleOnChange}
+                value={this.state.time}
+              />
             </div>
           </div>
         </div>
@@ -75,12 +148,15 @@ class Add extends Component {
           maxLength="255"
           minLength="30"
           placeholder="Description (30 - 255 characters)"
+          name="description"
+          onChange={this.handleOnChange}
+          value={this.state.description}
         />
 
         <div className="add-gig-location">
           <PlacesAutocomplete
             value={this.state.address}
-            onChange={this.handleChange}
+            onChange={this.handleLocation}
             onSelect={this.handleSelect}
           >
             {({
@@ -146,7 +222,7 @@ class Add extends Component {
           )}
         </div>
         <div className="add-gig-submit">
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onClick={this.handleSubmit} />
         </div>
       </div>
     );
