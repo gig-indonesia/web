@@ -28,6 +28,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/search" component={Search} />
+
                   <Route exact path="/add" component={Add} />
                   <Route exact path="/gigs" component={Gigs} />
                   <Route
@@ -35,6 +36,7 @@ class App extends Component {
                     path="/notifications"
                     component={Notifications}
                   />
+
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/profile" component={Profile} />

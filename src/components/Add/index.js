@@ -6,6 +6,7 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 const gigDate = new Date();
 gigDate.setDate(gigDate.getDate());
@@ -86,6 +87,12 @@ class Add extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    if (this.props.isAuth === false) {
+      this.props.history.push("/login");
+    }
+  }
 
   render() {
     return (
@@ -246,4 +253,11 @@ class Add extends Component {
   }
 }
 
-export default Add;
+const mapStateToProps = state => ({
+  isAuth: state.isAuth.isAuth
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Add);

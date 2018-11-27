@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
+import { isAuth } from "../../action/isAuthAction";
 
 class Login extends Component {
   constructor(props) {
@@ -27,8 +29,9 @@ class Login extends Component {
       })
       .then(data => {
         console.log(data.data);
-        this.props.history.push("/");
+        this.props.isAuth();
         localStorage.setItem("token", data.data.token);
+        this.props.history.push("/");
       })
 
       .catch(err => console.log(err));
@@ -71,4 +74,7 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default connect(
+  null,
+  { isAuth }
+)(Login);
