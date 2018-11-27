@@ -8,6 +8,11 @@ class Profile extends Component {
     super(props);
     this.state = {};
   }
+
+  logout = () => {
+    localStorage.removeItem("token");
+  };
+
   render() {
     return (
       <div className="profile-container">
@@ -47,6 +52,7 @@ class Profile extends Component {
             It has roots in a piece of classical Latin literature from 45 BC,{" "}
           </p>
         </div>
+        <button onClick={this.logout}>Log Out</button>
       </div>
     );
   }

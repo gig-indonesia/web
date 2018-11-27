@@ -1,18 +1,33 @@
 import React, { Component } from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Notification extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-      <div className="notif-container">
-        <div>
-          <p className="date">19 oct 2018, 7:19pm</p>
-          <hr />
-          <p className="mention">Pass band has been applied to your GIG</p>
+      <Link to={`/notifications/${this.props.notifications}`}>
+        <div className="notif-container">
+          <div>
+            <p className="date">{this.props.date}</p>
+            <hr />
+            <p className="mention">{this.props.notif}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
 
-export default Notification;
+const mapStateToProps = store => {
+  return {
+    notifications: store.newNotifications.newNotifications
+  };
+};
+
+export default connect(mapStateToProps)(Notification);

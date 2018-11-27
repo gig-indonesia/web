@@ -37,7 +37,6 @@ class Register extends Component {
       alert("password not match");
     }
   };
-
   render() {
     return (
       <div className="login-container">

@@ -1,26 +1,62 @@
 import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      username: "",
+      password: ""
+    };
   }
+  onChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  login = e => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post(`https://gig-id.herokuapp.com/accounts/login`, {
+        login: this.state.username,
+        password: this.state.password
+      })
+      .then(data => {
+        console.log(data.data);
+        this.props.history.push("/");
+        localStorage.setItem("token", data.data.token);
+      })
+
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="login-container">
-        <form>
+        <form onSubmit={this.login}>
           <div>
             <div className="login-type-in">
+              <h1>Login</h1>
               <input
-                name="email or user name"
+                onChange={this.onChange}
+                value={this.state.username}
+                name="username"
                 placeholder="email or user name"
                 type="text"
               />
             </div>
             <div className="login-type-in">
-              <input name="password" placeholder="password" type="password" />
+              <input
+                onChange={this.onChange}
+                value={this.state.password}
+                name="password"
+                placeholder="password"
+                type="password"
+              />
             </div>
             <button className="login-button">Login</button>
 
