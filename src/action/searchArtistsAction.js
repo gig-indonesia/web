@@ -11,10 +11,5 @@ export const searchArtists = query => dispatch => {
         payload: res.data
       });
     })
-    .catch(err =>
-      dispatch({
-        type: FETCH_DATA_SEARCH_ARTISTS,
-        payload: []
-      })
-    );
+    .catch(err => console.log(err));
 };

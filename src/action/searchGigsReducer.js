@@ -11,10 +11,5 @@ export const searchGigs = query => dispatch => {
         payload: res.data
       });
     })
-    .catch(err =>
-      dispatch({
-        type: FETCH_DATA_SEARCH_GIGS,
-        payload: []
-      })
-    );
+    .catch(err => console.log(err));
 };
