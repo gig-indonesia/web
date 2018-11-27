@@ -1,4 +1,4 @@
-import { IS_AUTH } from "../action/types";
+import { IS_AUTH, LOGOUT } from "../action/types";
 const initialState = {
   isAuth: false
 };
@@ -9,7 +9,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuth: action.payload
-      };
+      }
+    case LOGOUT:
+    return {
+      ...state,
+      isAuth: action.payload
+    }
     default:
       return state;
   }
