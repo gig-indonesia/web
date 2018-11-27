@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
 import axios from "axios";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 // import { fetchDataArtists } from "../../action/newArtistsAction";
 // import { fetchDataGigs } from "../../action/newGigsAction";
 
@@ -15,13 +15,17 @@ class Gigs extends Component {
   }
 
   async componentDidMount() {
-    await axios
-      .get("https://gig-id.herokuapp.com/host/1")
-      .then(res => {
-        console.log(res);
-        this.setState({ userGigs: res.data.Gigs });
-      })
-      .catch(err => console.log(err));
+    if (this.props.isAuth === false) {
+      this.props.history.push("/login");
+    } else {
+      await axios
+        .get("https://gig-id.herokuapp.com/host/1")
+        .then(res => {
+          console.log(res);
+          this.setState({ userGigs: res.data.Gigs });
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   render() {
@@ -40,14 +44,16 @@ class Gigs extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   newArtists: state.newArtists.newArtists,
-//   newGigs: state.newGigs.newGigs
-// });
+const mapStateToProps = state => ({
+  isAuth: state.isAuth.isAuth
+});
 
 // export default connect(
 //   mapStateToProps,
 //   { fetchDataArtists, fetchDataGigs }
 // )(Gigs);
 
-export default Gigs;
+export default connect(
+  mapStateToProps,
+  {}
+)(Gigs);
