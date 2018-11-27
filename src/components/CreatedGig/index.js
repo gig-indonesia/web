@@ -4,8 +4,13 @@ import "./index.css";
 class CreatedGig extends Component {
   constructor(props) {
     super(props);
-    this.state = { isArtist: true, latLng: "-6.2568167,106.94881620000001" };
+    this.state = {
+      isArtist: true,
+      latLng: "-6.2568167,106.94881620000001",
+      gigId: 1
+    };
   }
+
   render() {
     return (
       <div className="single-gig-container">

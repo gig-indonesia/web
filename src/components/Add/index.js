@@ -5,6 +5,7 @@ import PlacesAutocomplete, {
   getLatLng
 } from "react-places-autocomplete";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 const gigDate = new Date();
 gigDate.setDate(gigDate.getDate());
@@ -23,9 +24,9 @@ class Add extends Component {
       date: date,
       time: hour,
       description: "",
-      address: "",
+      location: "",
       latLng: "",
-      photo: null
+      image: null
     };
   }
 
@@ -34,12 +35,16 @@ class Add extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleLocation = address => {
-    this.setState({ address });
+  handleImageChange = e => {
+    this.setState({ image: e.target.files[0] });
   };
 
-  handleSelect = address => {
-    geocodeByAddress(address)
+  handleLocation = location => {
+    this.setState({ location });
+  };
+
+  handleSelect = location => {
+    geocodeByAddress(location)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         this.setState({
@@ -61,7 +66,7 @@ class Add extends Component {
         date: this.state.date,
         time: this.state.time,
         description: this.state.description,
-        address: this.state.address,
+        location: this.state.location,
         latLng: this.state.latLng,
         hostId: 1
       })
@@ -76,7 +81,8 @@ class Add extends Component {
         }
       })
       .then(res => {
-        this.getData();
+        console.log(res);
+        return <Redirect to="/gigs" />;
       })
       .catch(err => console.log(err));
   };
@@ -109,8 +115,8 @@ class Add extends Component {
             type="file"
             placeholder="Add photo"
             className="add-gig-image"
-            onChange={this.handleOnChange}
-            value={this.state.image}
+            onChange={this.handleImageChange}
+            name="image"
           />
 
           <div className="add-right-input">
@@ -155,7 +161,7 @@ class Add extends Component {
 
         <div className="add-gig-location">
           <PlacesAutocomplete
-            value={this.state.address}
+            value={this.state.location}
             onChange={this.handleLocation}
             onSelect={this.handleSelect}
           >

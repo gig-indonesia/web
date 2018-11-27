@@ -10,10 +10,5 @@ export const fetchDataGigs = () => dispatch => {
         payload: res.data
       })
     )
-    .catch(err =>
-      dispatch({
-        type: FETCH_DATA_NEW_GIGS,
-        payload: []
-      })
-    );
+    .catch(err => console.log(err));
 };
