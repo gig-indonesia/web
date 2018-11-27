@@ -102,10 +102,21 @@ class Add extends Component {
         </div>
 
         <div className="add-gig-attributes">
-          <div className="add-gig-photo">
+          <div
+            className="add-gig-photo"
+            style={{
+              backgroundImage: `url(${
+                this.state.image ? URL.createObjectURL(this.state.image) : ""
+              })`
+            }}
+          >
             <label htmlFor="add-gig-image" className="add-photo-icon">
-              <i className="fas fa-plus" />
-              <p>Add Photo</p>
+              {!this.state.image && (
+                <div>
+                  <i className="fas fa-plus" />
+                  <p>Add Photo</p>
+                </div>
+              )}
             </label>
           </div>
 
