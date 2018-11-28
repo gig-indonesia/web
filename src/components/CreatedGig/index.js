@@ -58,10 +58,24 @@ class CreatedGig extends Component {
 
               <div className="gig-info">
                 <h1>{this.state.gig.title}</h1>
-                <div className="gig-budget">Rp. {this.state.gig.budget}</div>
-                <time dateTime="2018-02-14 20:00">
-                  {this.state.gig.date} {this.state.gig.time}
-                </time>
+                <div className="gig-budget">
+                  {new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR"
+                  }).format(this.state.gig.budget)}
+                </div>
+                <div>
+                  {new Intl.DateTimeFormat("id-ID", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "numeric",
+                    minute: "numeric"
+                  }).format(new Date(this.state.gig.date))}
+                </div>
+                {/* <time dateTime="2018-02-14 20:00">
+                  {this.state.gig.date} {this.state.gig.hour}
+                </time> */}
               </div>
             </div>
             <h4>Description</h4>

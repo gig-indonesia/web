@@ -27,6 +27,7 @@ class Home extends Component {
       slidesToShow: 5,
       slidesToScroll: 1
     };
+
     return (
       <div className="home-container">
         <div className="home-artists-top">

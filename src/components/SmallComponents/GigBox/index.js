@@ -27,9 +27,12 @@ class GigBox extends Component {
               <span className="price-logo">
                 <i className="fas fa-money-bill" />
               </span>
-              <div>{`Rp. ${this.props.newGigs.budget
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`}</div>
+              <div>
+                {new Intl.NumberFormat("id-ID", {
+                  style: "currency",
+                  currency: "IDR"
+                }).format(this.props.newGigs.budget)}
+              </div>
             </div>
           </div>
         </div>

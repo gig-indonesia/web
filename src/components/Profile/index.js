@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
-import adamimg from "../../asset/adam.jpg";
+import avatarImg from "../../asset/avatar.png";
 import concertimg from "../../asset/concert.jpg";
 import { connect } from "react-redux";
 import { logout } from "../../action/isAuthAction";
@@ -10,7 +10,8 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editMode: false
+      editMode: false,
+      artist: ""
     };
   }
 
@@ -22,10 +23,22 @@ class Profile extends Component {
   };
 
   componentDidMount() {
+    const token = localStorage.getItem("token");
     if (this.props.isAuthState === false) {
       this.props.history.push("/login");
     } else {
-      Axios.get("http://localhost:5000/");
+      Axios.get("http://localhost:5000/artist/profile", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(res => {
+          console.log(res);
+          this.setState({
+            artist: res.data
+          });
+        })
+        .catch(err => console.log(err));
     }
   }
 
@@ -39,12 +52,16 @@ class Profile extends Component {
             <img className="profile-cover" src={concertimg} alt="concert" />
             <div className="profile-content">
               <div className="avatar-container">
-                <img className="profile-avatar" src={adamimg} alt="adam" />
+                <img className="profile-avatar" src={avatarImg} alt="adam" />
                 <div>
-                  <h3>The Adam's</h3>
+                  <h3>{this.state.artist.name}</h3>
                 </div>
                 <div>
-                  <p>Solo Musician</p>
+                  <p>
+                    {this.state.artist.type === "solo"
+                      ? "Solo Musician"
+                      : "Group / Band"}
+                  </p>
                 </div>
               </div>
             </div>
@@ -53,34 +70,50 @@ class Profile extends Component {
               <button className="edit-button">Edit Profile</button>
             </div>
 
+            {this.state.artist.description ? (
+              <div className="container-info">
+                <h2>About</h2>
+                <hr />
+                <p className="detail-description">
+                  {this.state.artist.description}
+                </p>
+              </div>
+            ) : (
+              <div className="container-info">
+                <h2>About</h2>
+                <hr />
+                <p className="detail-description">
+                  You have no any description
+                </p>
+              </div>
+            )}
+
             <div className="container-info">
-              <h2>About</h2>
+              <h2>Contact</h2>
               <hr />
               <p className="detail-description">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC,{" "}
+                {this.state.artist.email && (
+                  <React.Fragment>
+                    Email : {this.state.artist.email}
+                  </React.Fragment>
+                )}
+                {this.state.artist.phone && (
+                  <React.Fragment>
+                    Phone : {this.state.artist.phone}
+                  </React.Fragment>
+                )}
               </p>
             </div>
 
-            <div className="container-info">
-              <h2>About</h2>
-              <hr />
-              <p className="detail-description">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC,{" "}
-              </p>
-            </div>
-            <div className="container-info">
-              <h2>About</h2>
-              <hr />
-              <p className="detail-description">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC,{" "}
-              </p>
-            </div>
+            {this.state.artist.video && (
+              <div className="container-info">
+                <p className="detail-description">
+                  <a href={this.state.artist.video}>
+                    <button>See Performance Video</button>
+                  </a>
+                </p>
+              </div>
+            )}
           </React.Fragment>
         )}
         {type === "Host" && (
@@ -88,7 +121,7 @@ class Profile extends Component {
             You are a host, you dont need any profile
           </React.Fragment>
         )}
-        <button onClick={this.logout} class="logout-button">
+        <button onClick={this.logout} className="logout-button">
           Log Out
         </button>
       </div>
