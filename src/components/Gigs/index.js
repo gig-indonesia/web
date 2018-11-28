@@ -14,12 +14,19 @@ class Gigs extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    const type = localStorage.getItem("type");
+    const endpoint = type === "Artist" ? "artist/applied" : "host/createdgig";
+    const token = localStorage.getItem("token");
     if (this.props.isAuth === false) {
       this.props.history.push("/login");
     } else {
-      await axios
-        .get("https://gig-id.herokuapp.com/host/1")
+      axios
+        .get(`http://localhost:5000/${endpoint}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then(res => {
           console.log(res);
           this.setState({ userGigs: res.data.Gigs });
@@ -32,10 +39,13 @@ class Gigs extends Component {
     return (
       <div className="gigs-container">
         <h2>Your Gigs</h2>
+        {this.state.userGigs.length === 0 && <div>You have no any gig</div>}
+
         {this.state.userGigs !== "" &&
           this.state.userGigs.map((gig, index) => (
             <GigBox key={`gigs-${index}`} newGigs={gig} />
           ))}
+
         {/* {this.state.userGigs.map((gig, index) => (
           <GigBox key={`gigs-${index}`} newGigs={gig} />
         ))} */}

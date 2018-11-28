@@ -1,5 +1,4 @@
 import { FETCH_NOTIFICATIONS } from "../action/types";
-import axios from "axios";
 
 const initialState = {
   newNotifications: []

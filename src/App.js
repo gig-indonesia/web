@@ -13,8 +13,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import GigApplicants from "./components/GigApplicants";
-import { Provider } from "react-redux";
-import store from "./store";
+import axios from "axios";
+import { isAuth } from "./action/isAuthAction";
+import { connect } from "react-redux";
 
 class App extends Component {
   // componentDidMount() {
@@ -25,44 +26,54 @@ class App extends Component {
   //   document.head.append(script);
   // }
 
+  async componentDidMount() {
+    const token = await localStorage.getItem("token");
+    axios
+      .get(`http://localhost:5000/accounts/me`, {
+        headers: { authorization: `Bearer ${token}` }
+      })
+      .then(data => {
+        console.log(data);
+        this.props.isAuth();
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="background">
-            <div className="container">
-              <Header />
-              <div className="fit">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/search" component={Search} />
+      <Router>
+        <div className="background">
+          <div className="container">
+            <Header />
+            <div className="fit">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/search" component={Search} />
 
-                  <Route exact path="/add" component={Add} />
-                  <Route exact path="/gigs" component={Gigs} />
-                  <Route
-                    exact
-                    path="/notifications"
-                    component={Notifications}
-                  />
+                <Route exact path="/add" component={Add} />
+                <Route exact path="/gigs" component={Gigs} />
+                <Route exact path="/notifications" component={Notifications} />
 
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/profile" component={Profile} />
-                  <Route exact path="/gigs/1" component={CreatedGig} />
-                  <Route
-                    exact
-                    path="/gigs/1/applicants"
-                    component={GigApplicants}
-                  />
-                </Switch>
-              </div>
-              <Route path="/" component={Footer} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/profile" component={Profile} />
+                <Route exact path="/gigs/1" component={CreatedGig} />
+                <Route
+                  exact
+                  path="/gigs/1/applicants"
+                  component={GigApplicants}
+                />
+              </Switch>
             </div>
+            <Route path="/" component={Footer} />
           </div>
-        </Router>
-      </Provider>
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+export default connect(
+  null,
+  { isAuth }
+)(App);

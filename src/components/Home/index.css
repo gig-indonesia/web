@@ -13,7 +13,7 @@
 
 .home-gigs-see-more {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .home-artists-top {
@@ -43,6 +43,11 @@
 .home-new-artists .artist-box-container {
   margin-right: 10%;
   height: 125px;
+}
+
+.home-gigs-top {
+  display: flex;
+  justify-content: space-between;
 }
 
 @import "~slick-carousel/slick/slick.css";

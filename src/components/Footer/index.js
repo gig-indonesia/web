@@ -54,7 +54,7 @@ class Footer extends Component {
             </span>
           </Link>
 
-          <Link to="/notifications">
+          {/* <Link to="/notifications">
             <span
               className={classNames(
                 "footerIcon",
@@ -63,7 +63,7 @@ class Footer extends Component {
             >
               <i className="far fa-bell" />
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

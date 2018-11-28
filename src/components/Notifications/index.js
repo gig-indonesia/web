@@ -10,7 +10,7 @@ class Notification extends Component {
       this.props.history.push("/login");
     } else {
       await axios
-        .get("https://gig-id.herokuapp.com/host/1")
+        .get("http://localhost:5000/host/1")
         .then(res => {
           console.log(res);
           this.setState({ userGigs: res.data.Gigs });

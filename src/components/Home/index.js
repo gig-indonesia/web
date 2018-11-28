@@ -31,9 +31,9 @@ class Home extends Component {
       <div className="home-container">
         <div className="home-artists-top">
           <h2>New Artists</h2>
-          <div>
+          {/* <div>
             <Link to="/search/artists">See More</Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="home-new-artists">
@@ -47,15 +47,19 @@ class Home extends Component {
             </Slider>
           </div>
         </div>
-        <h2>New Gigs</h2>
+        <div className="home-gigs-top">
+          <h2>New Gigs</h2>
+          <div className="home-gigs-see-more">
+            <Link to="/search">
+              <button>
+                Search More Gigs <i className="fas fa-arrow-right" />
+              </button>
+            </Link>
+          </div>
+        </div>
         {this.props.newGigs.map((gig, index) => (
           <GigBox key={`gigs-${index}`} newGigs={gig} />
         ))}
-        <div className="home-gigs-see-more">
-          <button>
-            See More Gigs <i className="fas fa-arrow-right" />
-          </button>
-        </div>
       </div>
     );
   }

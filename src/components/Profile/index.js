@@ -3,7 +3,7 @@ import "./index.css";
 import adamimg from "../../asset/adam.jpg";
 import concertimg from "../../asset/concert.jpg";
 import { connect } from "react-redux";
-import { logout } from "../../action/isAuthAction"
+import { logout } from "../../action/isAuthAction";
 
 class Profile extends Component {
   constructor(props) {
@@ -13,13 +13,14 @@ class Profile extends Component {
 
   logout = () => {
     localStorage.removeItem("token");
-    this.props.logout()
-    this.props.history.push("/")
+    localStorage.removeItem("type");
+    this.props.logout();
+    this.props.history.push("/");
   };
 
-  componentDidMount () {
-    if(this.props.isAuthState === false){
-      this.props.history.push("/login")
+  componentDidMount() {
+    if (this.props.isAuthState === false) {
+      this.props.history.push("/login");
     }
   }
 
@@ -72,4 +73,7 @@ const mapStateToProps = state => ({
   isAuthState: state.isAuth.isAuth
 });
 
-export default connect(mapStateToProps, {logout})(Profile);
+export default connect(
+  mapStateToProps,
+  { logout }
+)(Profile);

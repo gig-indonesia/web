@@ -20,17 +20,25 @@ class Login extends Component {
     });
   };
 
+  componentDidMount = () => {
+    if (localStorage.getItem("token")) {
+      this.props.history.push("/");
+    }
+  };
+
   login = e => {
     e.preventDefault();
     axios
-      .post(`https://gig-id.herokuapp.com/accounts/login`, {
+      .post(`http://localhost:5000/accounts/login`, {
         login: this.state.username,
         password: this.state.password
       })
       .then(data => {
-        if (data.data.message === "You are logged in") {
+        console.log(data);
+        if (data.data.message) {
           this.props.isAuth();
           localStorage.setItem("token", data.data.token);
+          localStorage.setItem("type", data.data.accountType);
           this.props.history.push("/");
         } else if (data.data === "account not found") {
           this.setState({
@@ -45,20 +53,6 @@ class Login extends Component {
 
       .catch(err => console.log(err));
   };
-
-  componentDidMount() {
-    const headers = localStorage.getItem("token");
-    console.log(headers);
-    // axios
-    //   .head(`https://gig-id.herokuapp.com/accounts/head`, { headers: headers })
-    //   .then(data => {
-    //     console.log(data);
-    //     // this.props.isAuth();
-    //     // this.props.history.push("/");
-    //   })
-
-    //   .catch(err => console.log(err));
-  }
 
   render() {
     return (
@@ -85,11 +79,14 @@ class Login extends Component {
               />
             </div>
             <button className="login-button">Login</button>
-            {this.state.message === "invalid" && <div>Password is invalid</div>}
-            {this.state.message === "notfound" && <div>Account not found</div>}
+            {this.state.message === "invalid" && (
+              <div className="login-warning">Password is invalid</div>
+            )}
+            {this.state.message === "notfound" && (
+              <div className="login-warning">Account not found</div>
+            )}
             <div className="small-link">
-              <Link to="#">Sign Up Now!</Link>
-              <Link to="#">forgot password?</Link>
+              <Link to="/register">Sign Up Now!</Link>
             </div>
           </div>
         </form>
@@ -98,7 +95,11 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  isAuthState: state.isAuth.isAuth
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { isAuth }
 )(Login);

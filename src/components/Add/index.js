@@ -5,7 +5,6 @@ import PlacesAutocomplete, {
   getLatLng
 } from "react-places-autocomplete";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 const gigDate = new Date();
@@ -76,14 +75,14 @@ class Add extends Component {
     await data.append("user_image", this.state.image);
     console.log(data);
     axios
-      .post("https://gig-id.herokuapp.com/gigs", data, {
+      .post("http://localhost:5000/gigs", data, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       })
       .then(res => {
         console.log(res);
-        return <Redirect to="/gigs" />;
+        this.props.history.push("/gigs");
       })
       .catch(err => console.log(err));
   };

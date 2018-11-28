@@ -1,5 +1,4 @@
 import { IS_AUTH, LOGOUT } from "./types";
-import axios from "axios";
 
 export const isAuth = e => ({
   type: IS_AUTH,
@@ -9,4 +8,4 @@ export const isAuth = e => ({
 export const logout = e => ({
   type: LOGOUT,
   payload: false
-})
+});

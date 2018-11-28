@@ -10,14 +10,15 @@
   display: flex;
 }
 
-.register-type-in input {
+.register-type-in input[type="text"],
+.register-type-in input[type="password"] {
   width: 100%;
   height: 35px;
   border: 1px solid white;
   border-radius: 5px;
   margin-top: 20px;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 2%;
 }
 
 .login-container form {
@@ -32,6 +33,12 @@
 .login-container form > div {
   margin: 0 auto;
   width: 75%;
+}
+
+.login-container button {
+  color: white;
+  font-weight: bold;
+  border: initial;
 }
 
 .register-button {
@@ -53,4 +60,21 @@
   color: white;
   text-decoration: none;
   font-size: 16px;
+}
+
+.regtype {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  background: rgb(86, 174, 224);
+  margin: 2% 0;
+}
+
+.regtype input[type="radio"] {
+  width: 5%;
+  height: 2em;
+  align-items: center;
+  margin: 10px;
+  border: black 10px solid;
 }
