@@ -17,6 +17,14 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 class App extends Component {
+  // componentDidMount() {
+  //   const API_KEY = process.env.GOOGLE_API_KEY;
+
+  //   const script = document.createElement("script");
+  //   script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`;
+  //   document.head.append(script);
+  // }
+
   render() {
     return (
       <Provider store={store}>

@@ -10,7 +10,8 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      message: ""
     };
   }
   onChange = e => {
@@ -21,21 +22,43 @@ class Login extends Component {
 
   login = e => {
     e.preventDefault();
-    console.log(this.state);
     axios
       .post(`https://gig-id.herokuapp.com/accounts/login`, {
         login: this.state.username,
         password: this.state.password
       })
       .then(data => {
-        console.log(data.data);
-        this.props.isAuth();
-        localStorage.setItem("token", data.data.token);
-        this.props.history.push("/");
+        if (data.data.message === "You are logged in") {
+          this.props.isAuth();
+          localStorage.setItem("token", data.data.token);
+          this.props.history.push("/");
+        } else if (data.data === "account not found") {
+          this.setState({
+            message: "notfound"
+          });
+        } else if (data.data === "password is not valid") {
+          this.setState({
+            message: "invalid"
+          });
+        }
       })
 
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    const headers = localStorage.getItem("token");
+    console.log(headers);
+    // axios
+    //   .head(`https://gig-id.herokuapp.com/accounts/head`, { headers: headers })
+    //   .then(data => {
+    //     console.log(data);
+    //     // this.props.isAuth();
+    //     // this.props.history.push("/");
+    //   })
+
+    //   .catch(err => console.log(err));
+  }
 
   render() {
     return (
@@ -62,7 +85,8 @@ class Login extends Component {
               />
             </div>
             <button className="login-button">Login</button>
-
+            {this.state.message === "invalid" && <div>Password is invalid</div>}
+            {this.state.message === "notfound" && <div>Account not found</div>}
             <div className="small-link">
               <Link to="#">Sign Up Now!</Link>
               <Link to="#">forgot password?</Link>
