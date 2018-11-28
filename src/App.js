@@ -49,15 +49,14 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/search" component={Search} />
-
                 <Route exact path="/add" component={Add} />
                 <Route exact path="/gigs" component={Gigs} />
                 <Route exact path="/notifications" component={Notifications} />
-
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/profile" component={Profile} />
-                <Route exact path="/gigs/1" component={CreatedGig} />
+                <Route exact path="/gigs/:id" component={CreatedGig} />
+                <Route exact path="/artist/:id" component={Profile} />
                 <Route
                   exact
                   path="/gigs/1/applicants"

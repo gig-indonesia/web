@@ -31,7 +31,6 @@ class Add extends Component {
   }
 
   handleOnChange = e => {
-    console.log(e);
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -67,17 +66,16 @@ class Add extends Component {
         time: this.state.time,
         description: this.state.description,
         location: this.state.location,
-        latLng: this.state.latLng,
-        hostId: 1
+        latLng: this.state.latLng
       })
     );
-
+    const token = await localStorage.getItem("token");
     await data.append("user_image", this.state.image);
-    console.log(data);
     axios
       .post("http://localhost:5000/gigs", data, {
         headers: {
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`
         }
       })
       .then(res => {

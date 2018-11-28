@@ -25,44 +25,53 @@ class Profile extends Component {
   }
 
   render() {
+    const type = localStorage.getItem("type");
+
     return (
       <div className="profile-container">
-        <img className="profile-cover" src={concertimg} alt="concert" />
-        <div className="profile-content">
-          <div className="avatar-container">
-            <img className="profile-avatar" src={adamimg} alt="adam" />
-            <div>
-              <h3>The Adam's</h3>
+        {type === "Artist" && (
+          <React.Fragment>
+            <img className="profile-cover" src={concertimg} alt="concert" />
+            <div className="profile-content">
+              <div className="avatar-container">
+                <img className="profile-avatar" src={adamimg} alt="adam" />
+                <div>
+                  <h3>The Adam's</h3>
+                </div>
+                <div>
+                  <p>Solo Musician</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p>Solo Musician</p>
+            <div className="container-info">
+              <p className="title-description">About</p>
+              <hr />
+              <p className="detail-description">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC,{" "}
+              </p>
             </div>
-          </div>
-        </div>
-        <div className="container-info">
-          <p className="title-description">About</p>
-          <hr />
-          <p className="detail-description">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,{" "}
-          </p>
-        </div>
-        <div className="container-info">
-          <p className="title-description">About</p>
-          <hr />
-          <p className="detail-description">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,{" "}
-          </p>
-        </div>
-        <div className="container-info">
-          <p className="title-description">About</p>
-          <hr />
-          <p className="detail-description">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,{" "}
-          </p>
-        </div>
+            <div className="container-info">
+              <p className="title-description">About</p>
+              <hr />
+              <p className="detail-description">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC,{" "}
+              </p>
+            </div>
+            <div className="container-info">
+              <p className="title-description">About</p>
+              <hr />
+              <p className="detail-description">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC,{" "}
+              </p>
+            </div>
+          </React.Fragment>
+        )}
         <button onClick={this.logout}>Log Out</button>
       </div>
     );

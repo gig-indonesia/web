@@ -16,7 +16,7 @@ class Gigs extends Component {
 
   componentDidMount() {
     const type = localStorage.getItem("type");
-    const endpoint = type === "Artist" ? "artist/applied" : "host/createdgig";
+    const endpoint = type === "Artist" ? "artist/applied" : "host/gigcreated";
     const token = localStorage.getItem("token");
     if (this.props.isAuth === false) {
       this.props.history.push("/login");

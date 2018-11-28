@@ -11,7 +11,7 @@ class ArtistBox extends Component {
 
   render() {
     return (
-      <Link to={`/artists/${this.props.newArtists.username}`}>
+      <Link to={`/artists/${this.props.newArtists.id}`}>
         <div className="artist-box-container">
           <img src={artistImg} alt="artist" width="100%" />
           {<h5>{this.props.newArtists.name.substring(0, 23)}</h5>}

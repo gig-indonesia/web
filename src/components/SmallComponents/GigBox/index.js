@@ -13,7 +13,12 @@ class GigBox extends Component {
       <Link to={`/gigs/${this.props.newGigs.id}`}>
         <div className="gig-container">
           <div className="gig-photo">
-            <img src={img} alt="rest" />
+            <img
+              src={`https://s3.us-east-2.amazonaws.com/gigfiles/${
+                this.state.newGigs.photo
+              }`}
+              alt="rest"
+            />
           </div>
           <div>
             <h3>{this.props.newGigs.title}</h3>
