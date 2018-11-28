@@ -61,7 +61,7 @@ class Login extends Component {
             <button className="login-button">Login</button>
 
             <div className="small-link">
-              <Link to="#">Sign Up Now!</Link>
+              <Link to="/register">Sign Up Now!</Link>
               <Link to="#">forgot password?</Link>
             </div>
           </div>

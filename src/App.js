@@ -15,6 +15,7 @@ import Register from "./components/Register";
 import GigApplicants from "./components/GigApplicants";
 import { Provider } from "react-redux";
 import store from "./store";
+import EditProfile from "./components/Editprofile";
 
 class App extends Component {
   render() {
@@ -44,6 +45,7 @@ class App extends Component {
                     path="/gigs/1/applicants"
                     component={GigApplicants}
                   />
+                  <Route exact path="/edit-profile" component={EditProfile} />
                 </Switch>
               </div>
               <Route path="/" component={Footer} />
