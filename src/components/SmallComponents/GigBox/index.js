@@ -15,7 +15,7 @@ class GigBox extends Component {
           <div className="gig-photo">
             <img
               src={`https://s3.us-east-2.amazonaws.com/gigfiles/${
-                this.state.newGigs.photo
+                this.props.newGigs.photo
               }`}
               alt="rest"
             />

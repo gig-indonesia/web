@@ -37,3 +37,26 @@
   padding-left: 15px;
   padding-top: 3px;
 }
+
+.logout-button {
+  padding: 10px;
+  background: red;
+  color: white;
+  border-radius: 5%;
+  font-weight: bold;
+  display: block;
+  margin: 2%;
+}
+
+.edit-profile {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-button {
+  padding: 10px;
+}
+
+.container-info {
+  margin-bottom: 2%;
+}

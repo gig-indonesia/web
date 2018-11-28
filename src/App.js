@@ -16,6 +16,7 @@ import GigApplicants from "./components/GigApplicants";
 import axios from "axios";
 import { isAuth } from "./action/isAuthAction";
 import { connect } from "react-redux";
+import Artist from "./components/Artist";
 
 class App extends Component {
   // componentDidMount() {
@@ -56,7 +57,7 @@ class App extends Component {
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/gigs/:id" component={CreatedGig} />
-                <Route exact path="/artist/:id" component={Profile} />
+                <Route exact path="/artists/:id" component={Artist} />
                 <Route
                   exact
                   path="/gigs/1/applicants"

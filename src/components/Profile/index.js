@@ -4,11 +4,14 @@ import adamimg from "../../asset/adam.jpg";
 import concertimg from "../../asset/concert.jpg";
 import { connect } from "react-redux";
 import { logout } from "../../action/isAuthAction";
+import Axios from "axios";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      editMode: false
+    };
   }
 
   logout = () => {
@@ -21,12 +24,14 @@ class Profile extends Component {
   componentDidMount() {
     if (this.props.isAuthState === false) {
       this.props.history.push("/login");
+    } else {
+      Axios.get("http://localhost:5000/");
     }
   }
 
   render() {
     const type = localStorage.getItem("type");
-
+    const token = localStorage.getItem("token");
     return (
       <div className="profile-container">
         {type === "Artist" && (
@@ -43,8 +48,23 @@ class Profile extends Component {
                 </div>
               </div>
             </div>
+
+            <div className="edit-profile">
+              <button className="edit-button">Edit Profile</button>
+            </div>
+
             <div className="container-info">
-              <p className="title-description">About</p>
+              <h2>About</h2>
+              <hr />
+              <p className="detail-description">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical Latin literature from
+                45 BC,{" "}
+              </p>
+            </div>
+
+            <div className="container-info">
+              <h2>About</h2>
               <hr />
               <p className="detail-description">
                 Contrary to popular belief, Lorem Ipsum is not simply random
@@ -53,16 +73,7 @@ class Profile extends Component {
               </p>
             </div>
             <div className="container-info">
-              <p className="title-description">About</p>
-              <hr />
-              <p className="detail-description">
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classical Latin literature from
-                45 BC,{" "}
-              </p>
-            </div>
-            <div className="container-info">
-              <p className="title-description">About</p>
+              <h2>About</h2>
               <hr />
               <p className="detail-description">
                 Contrary to popular belief, Lorem Ipsum is not simply random
@@ -72,7 +83,14 @@ class Profile extends Component {
             </div>
           </React.Fragment>
         )}
-        <button onClick={this.logout}>Log Out</button>
+        {type === "Host" && (
+          <React.Fragment>
+            You are a host, you dont need any profile
+          </React.Fragment>
+        )}
+        <button onClick={this.logout} class="logout-button">
+          Log Out
+        </button>
       </div>
     );
   }
