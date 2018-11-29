@@ -62,34 +62,36 @@ class Login extends Component {
         <form onSubmit={this.login}>
           <div>
             <img src={GIG1} alt="giglogo" />
-            <div className="login-type-in">
-              <h1>Login</h1>
-              <input
-                onChange={this.onChange}
-                value={this.state.username}
-                name="username"
-                placeholder="email or user name"
-                type="text"
-              />
-            </div>
-            <div className="login-type-in">
-              <input
-                onChange={this.onChange}
-                value={this.state.password}
-                name="password"
-                placeholder="password"
-                type="password"
-              />
-            </div>
-            <button className="login-button">Login</button>
-            {this.state.message === "invalid" && (
-              <div className="login-warning">Password is invalid</div>
-            )}
-            {this.state.message === "notfound" && (
-              <div className="login-warning">Account not found</div>
-            )}
-            <div className="small-link">
-              <Link to="/register">Sign Up Now!</Link>
+            <div className="login-box">
+              <div className="login-type-in">
+                <h2>Login</h2>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.username}
+                  name="username"
+                  placeholder="email or user name"
+                  type="text"
+                />
+              </div>
+              <div className="login-type-in">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  name="password"
+                  placeholder="password"
+                  type="password"
+                />
+              </div>
+              <button className="login-button">Login</button>
+              {this.state.message === "invalid" && (
+                <div className="login-warning">Password is invalid</div>
+              )}
+              {this.state.message === "notfound" && (
+                <div className="login-warning">Account not found</div>
+              )}
+              <div className="small-link">
+                <Link to="/register">Sign Up Now!</Link>
+              </div>
             </div>
           </div>
         </form>

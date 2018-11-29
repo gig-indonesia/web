@@ -1,7 +1,7 @@
 .login-container {
   background: url("http://www.mobileswall.com/wp-content/uploads/2014/03/640-Concert-Live-Music-l.jpg")
     no-repeat center center fixed;
-  background-size: contain;
+  background-size: cover;
   overflow: hidden;
   height: 100%;
 }

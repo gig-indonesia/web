@@ -25,6 +25,9 @@ h2 {
   height: 100%;
   overflow-y: auto;
   background-color: rgb(250, 250, 250);
+}
+
+.fit > div:not(.login-container) {
   padding: 3% 2% 2% 2%;
 }
 

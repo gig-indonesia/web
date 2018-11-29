@@ -1,13 +1,15 @@
 .login-container {
   background: url("http://www.mobileswall.com/wp-content/uploads/2014/03/640-Concert-Live-Music-l.jpg")
     no-repeat center center fixed;
-  background-size: contain;
-  overflow: hidden;
-  height: 100%;
+  background-size: cover;
+  /* margin: -3% -3% 0 -3%;
+  overflow: scroll; */
 }
 
-.login-container {
-  display: flex;
+.login-container h2 {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 5%;
 }
 
 .login-type-in input {
@@ -22,11 +24,11 @@
 }
 
 .login-container form {
-  width: 100%;
-  display: flex;
+  width: 99%;
+  /* display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   background-color: rgba(76, 160, 235, 0.67);
 }
 
@@ -59,18 +61,21 @@
   color: white;
 }
 
-
 .login-container img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;}
+  height: 100%;
+}
 
 .login-warning {
   color: white;
   padding: 5px;
   margin: 5px;
   background: red;
+}
 
+.login-box {
+  margin-top: -15%;
 }
