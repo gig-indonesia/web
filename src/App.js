@@ -60,7 +60,7 @@ class App extends Component {
                 <Route exact path="/artists/:id" component={Artist} />
                 <Route
                   exact
-                  path="/gigs/1/applicants"
+                  path="/gigs/:id/applicants"
                   component={GigApplicants}
                 />
               </Switch>

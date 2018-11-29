@@ -13,6 +13,10 @@ class CreatedGig extends Component {
     };
   }
 
+  handleApplicant = e => {
+    this.props.history.push(`/gigs/${this.props.match.params.id}/applicants`);
+  };
+
   handleApply = e => {
     const token = localStorage.getItem("token");
     const data = {
@@ -102,6 +106,9 @@ class CreatedGig extends Component {
             </a>
             {type === "Artist" && (
               <button onClick={this.handleApply}>Apply</button>
+            )}
+            {type === "Host" && (
+              <button onClick={this.handleApplicant}>See Applicants</button>
             )}
             {this.state.applied === true && (
               <div>You have been applied to this gig</div>
