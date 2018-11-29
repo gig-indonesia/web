@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import avatarImg from "../../asset/avatar.png";
 import concertimg from "../../asset/concert.jpg";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../action/isAuthAction";
 import Axios from "axios";
@@ -23,6 +24,7 @@ class Profile extends Component {
   };
 
   componentDidMount() {
+
     const token = localStorage.getItem("token");
     if (this.props.isAuthState === false) {
       this.props.history.push("/login");
@@ -66,9 +68,11 @@ class Profile extends Component {
               </div>
             </div>
 
+            <Link to="/edit-profile">
             <div className="edit-profile">
               <button className="edit-button">Edit Profile</button>
             </div>
+            </Link>
 
             {this.state.artist.description ? (
               <div className="container-info">
