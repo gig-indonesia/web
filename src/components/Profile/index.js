@@ -45,7 +45,6 @@ class Profile extends Component {
 
   render() {
     const type = localStorage.getItem("type");
-    const token = localStorage.getItem("token");
     return (
       <div className="profile-container">
         {type === "Artist" && (
@@ -53,7 +52,17 @@ class Profile extends Component {
             <img className="profile-cover" src={concertimg} alt="concert" />
             <div className="profile-content">
               <div className="avatar-container">
-                <img className="profile-avatar" src={`https://s3.us-east-2.amazonaws.com/gigfiles/${this.state.artist.photo}` || avatarImg} alt="adam" />
+                <img
+                  className="profile-avatar"
+                  src={
+                    this.state.artist.photo
+                      ? `https://s3.us-east-2.amazonaws.com/gigfiles/${
+                          this.state.artist.photo
+                        }`
+                      : avatarImg
+                  }
+                  alt="adam"
+                />
                 <div>
                   <h3>{this.state.artist.name}</h3>
                 </div>

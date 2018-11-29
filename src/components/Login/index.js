@@ -61,7 +61,7 @@ class Login extends Component {
       <div className="login-container">
         <form onSubmit={this.login}>
           <div>
-            <img src={GIG1} />
+            <img src={GIG1} alt="giglogo" />
             <div className="login-type-in">
               <h1>Login</h1>
               <input

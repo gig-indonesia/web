@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
-import GIG1 from "../../asset/gigid1.png";
+// import GIG1 from "../../asset/gigid1.png";
 
 class Header extends Component {
   constructor(props) {
@@ -12,9 +12,8 @@ class Header extends Component {
     return (
       <div className="header">
         <Link to="/">
-          <img src={GIG1} />
+          <h1>GiG</h1>
         </Link>
-
         <Link to="/profile">
           <i className="fas fa-user-circle" />
         </Link>

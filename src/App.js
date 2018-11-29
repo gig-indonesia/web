@@ -15,7 +15,7 @@ import Register from "./components/Register";
 import GigApplicants from "./components/GigApplicants";
 import EditProfile from "./components/Editprofile";
 import axios from "axios";
-import { isAuth } from "./action/isAuthAction";
+import { isAuth, logout } from "./action/isAuthAction";
 import { connect } from "react-redux";
 import Artist from "./components/Artist";
 
@@ -36,7 +36,11 @@ class App extends Component {
       })
       .then(data => {
         console.log(data);
-        this.props.isAuth();
+        if (this.data.message === "You are logged in") {
+          this.props.isAuth();
+        } else {
+          this.props.logout();
+        }
       })
       .catch(err => console.log(err));
   }
@@ -77,5 +81,5 @@ class App extends Component {
 
 export default connect(
   null,
-  { isAuth }
+  { isAuth, logout }
 )(App);
