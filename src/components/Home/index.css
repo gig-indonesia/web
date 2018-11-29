@@ -4,16 +4,18 @@
   color: white;
   font-weight: bold;
   padding: 10px;
-  margin: 5px 0 5px;
+  margin: 5px 10% 5px;
   background: #4ca0eb;
   border: none;
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .home-gigs-see-more {
   display: flex;
   justify-content: flex-end;
+  margin-right: 5%;
 }
 
 .home-artists-top {

@@ -3,8 +3,6 @@ import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
 import axios from "axios";
 import { connect } from "react-redux";
-// import { fetchDataArtists } from "../../action/newArtistsAction";
-// import { fetchDataGigs } from "../../action/newGigsAction";
 
 class Gigs extends Component {
   constructor(props) {
@@ -49,16 +47,20 @@ class Gigs extends Component {
     return (
       <div className="gigs-container">
         <h2>Your Gigs</h2>
-        {isArray.length === 0 && <div>You have no any gig</div>}
 
-        {/* {this.state.userGigs !== "" &&
-          this.state.userGigs.map((gig, index) => (
-            <GigBox key={`gigs-${index}`} newGigs={gig} />
-          ))} */}
+        {this.state.userGigs !== "" ? (
+          this.state.userGigs.length === 0 ? (
+            <div>You have no any gig</div>
+          ) : null
+        ) : null}
 
-        {/* {this.state.userGigs.map((gig, index) => (
-          <GigBox key={`gigs-${index}`} newGigs={gig} />
-        ))} */}
+        {this.state.userGigs !== ""
+          ? this.state.userGigs.length > 0
+            ? this.state.userGigs.map((gig, index) => (
+                <GigBox key={`gigs-${index}`} newGigs={gig} />
+              ))
+            : null
+          : null}
       </div>
     );
   }

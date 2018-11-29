@@ -79,7 +79,7 @@ class Add extends Component {
       })
       .then(res => {
         console.log(res);
-        this.props.history.push("/gigs");
+        this.props.history.push("/");
       })
       .catch(err => console.log(err));
   };
