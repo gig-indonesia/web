@@ -8,6 +8,11 @@ import { fetchDataArtists } from "../../action/newArtistsAction";
 import { fetchDataGigs } from "../../action/newGigsAction";
 import { Link } from "react-router-dom";
 
+const mapStateToProps = state => ({
+  newArtists: state.newArtists.newArtists,
+  newGigs: state.newGigs.newGigs
+});
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +33,20 @@ class Home extends Component {
       slidesToScroll: 1
     };
 
+    let emptyArtist = null;
+    if (this.props.newArtists) {
+      emptyArtist = false;
+    } else {
+      emptyArtist = true;
+    }
+
+    let emptyGig = null;
+    if (this.props.newGigs) {
+      emptyGig = false;
+    } else {
+      emptyGig = true;
+    }
+
     return (
       <div className="home-container">
         <div className="home-artists-top">
@@ -40,11 +59,12 @@ class Home extends Component {
         <div className="home-new-artists">
           <div>
             <Slider {...settings}>
-              {this.props.newArtists.map((artist, index) => (
-                <div key={`artist-${index}`}>
-                  <ArtistBox newArtists={artist} />
-                </div>
-              ))}
+              {!emptyArtist &&
+                this.props.newArtists.map((artist, index) => (
+                  <div key={`artist-${index}`}>
+                    <ArtistBox newArtists={artist} />
+                  </div>
+                ))}
             </Slider>
           </div>
         </div>
@@ -61,18 +81,14 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        {this.props.newGigs.map((gig, index) => (
-          <GigBox key={`gigs-${index}`} newGigs={gig} />
-        ))}
+        {!emptyGig &&
+          this.props.newGigs.map((gig, index) => (
+            <GigBox key={`gigs-${index}`} newGigs={gig} />
+          ))}
       </div>
     );
   }
 }
-
-const mapStateToProps = state => ({
-  newArtists: state.newArtists.newArtists,
-  newGigs: state.newGigs.newGigs
-});
 
 export default connect(
   mapStateToProps,

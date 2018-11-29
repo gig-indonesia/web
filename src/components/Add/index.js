@@ -62,7 +62,7 @@ class Add extends Component {
       JSON.stringify({
         title: this.state.title,
         budget: this.state.budget,
-        date: `${this.state.date}T${this.state.time}.00Z`,
+        date: `${this.state.date}T${this.state.time}.000Z`,
         description: this.state.description,
         location: this.state.location,
         latLng: this.state.latLng
@@ -91,6 +91,7 @@ class Add extends Component {
   }
 
   render() {
+    console.log(`${this.state.date} ${this.state.time}`);
     return (
       <div className="add-container">
         <h2>Add New Gig</h2>

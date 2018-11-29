@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import GigApplicants from "./components/GigApplicants";
+import EditProfile from "./components/Editprofile";
 import axios from "axios";
 import { isAuth } from "./action/isAuthAction";
 import { connect } from "react-redux";
@@ -42,6 +43,7 @@ class App extends Component {
 
   render() {
     return (
+
       <Router>
         <div className="background">
           <div className="container">
@@ -63,6 +65,7 @@ class App extends Component {
                   path="/gigs/:id/applicants"
                   component={GigApplicants}
                 />
+                <Route exact path="/edit-profile" component={EditProfile} />
               </Switch>
             </div>
             <Route path="/" component={Footer} />

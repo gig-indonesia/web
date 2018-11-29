@@ -38,7 +38,7 @@ class Register extends Component {
     e.preventDefault();
 
     if (this.state.accountType === "") {
-      alert("you must choose your role");
+      alert("you must choose your account type");
       return;
     }
 
