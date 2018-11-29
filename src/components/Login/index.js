@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import GIG1 from "../../asset/gigid1.png";
 
 class Login extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class Login extends Component {
       <div className="login-container">
         <form onSubmit={this.login}>
           <div>
+            <img src={GIG1} />
             <div className="login-type-in">
               <h1>Login</h1>
               <input
@@ -62,7 +64,6 @@ class Login extends Component {
 
             <div className="small-link">
               <Link to="/register">Sign Up Now!</Link>
-              <Link to="#">forgot password?</Link>
             </div>
           </div>
         </form>

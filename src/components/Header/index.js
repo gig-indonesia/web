@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 import { Link } from "react-router-dom";
-// import Login from "./Components/Login";
+import GIG1 from "../../asset/gigid1.png";
 
 class Header extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <div className="header">
         <Link to="/">
-          <h1>GiG</h1>
+          <img src={GIG1} />
         </Link>
 
         <Link to="/profile">
