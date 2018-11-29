@@ -5,7 +5,7 @@ import PlacesAutocomplete, {
   getLatLng
 } from "react-places-autocomplete";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 const gigDate = new Date();
 gigDate.setDate(gigDate.getDate());
@@ -31,7 +31,6 @@ class Add extends Component {
   }
 
   handleOnChange = e => {
-    console.log(e);
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -67,25 +66,30 @@ class Add extends Component {
         time: this.state.time,
         description: this.state.description,
         location: this.state.location,
-        latLng: this.state.latLng,
-        hostId: 1
+        latLng: this.state.latLng
       })
     );
-
+    const token = await localStorage.getItem("token");
     await data.append("user_image", this.state.image);
-    console.log(data);
     axios
-      .post("https://gig-id.herokuapp.com/gigs", data, {
+      .post("http://localhost:5000/gigs", data, {
         headers: {
-          "Content-Type": "multipart/form-data"
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`
         }
       })
       .then(res => {
         console.log(res);
-        return <Redirect to="/gigs" />;
+        this.props.history.push("/gigs");
       })
       .catch(err => console.log(err));
   };
+
+  componentDidMount() {
+    if (this.props.isAuth === false) {
+      this.props.history.push("/login");
+    }
+  }
 
   render() {
     return (
@@ -246,4 +250,11 @@ class Add extends Component {
   }
 }
 
-export default Add;
+const mapStateToProps = state => ({
+  isAuth: state.isAuth.isAuth
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Add);

@@ -13,7 +13,12 @@ class GigBox extends Component {
       <Link to={`/gigs/${this.props.newGigs.id}`}>
         <div className="gig-container">
           <div className="gig-photo">
-            <img src={img} alt="rest" />
+            <img
+              src={`https://s3.us-east-2.amazonaws.com/gigfiles/${
+                this.props.newGigs.photo
+              }`}
+              alt="rest"
+            />
           </div>
           <div>
             <h3>{this.props.newGigs.title}</h3>
@@ -22,9 +27,12 @@ class GigBox extends Component {
               <span className="price-logo">
                 <i className="fas fa-money-bill" />
               </span>
-              <div>{`Rp. ${this.props.newGigs.budget
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`}</div>
+              <div>
+                {new Intl.NumberFormat("id-ID", {
+                  style: "currency",
+                  currency: "IDR"
+                }).format(this.props.newGigs.budget)}
+              </div>
             </div>
           </div>
         </div>

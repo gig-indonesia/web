@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchDataArtists = () => dispatch => {
   axios
-    .get("https://gig-id.herokuapp.com/artist")
+    .get("http://localhost:5000/artist")
     .then(res =>
       dispatch({
         type: FETCH_DATA_NEW_ARTISTS,

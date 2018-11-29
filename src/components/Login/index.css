@@ -58,3 +58,10 @@ h1 {
   text-align: center;
   color: white;
 }
+
+.login-warning {
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  background: red;
+}
