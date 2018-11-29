@@ -23,6 +23,7 @@ class EditProfile extends Component {
   };
 
   handleSubmit = async e => {
+    e.target.disabled = true;
     const data = await new FormData();
     await data.append(
       "user_data",
@@ -132,9 +133,7 @@ class EditProfile extends Component {
             value={this.state.contact}
           />
 
-          <button type="submit" value="Submit" onClick={this.handleSubmit}>
-            submit
-          </button>
+          <button onClick={this.handleSubmit}>submit</button>
         </div>
       </div>
     );

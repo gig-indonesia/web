@@ -45,7 +45,8 @@
   font-family: Helvetica, sans-serif;
 }
 
-.add-container input[type="submit"] {
+.add-container input[type="submit"],
+.add-container button {
   margin: 10px 0 5px;
   background: #4ca0eb;
   color: white;

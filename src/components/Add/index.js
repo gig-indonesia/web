@@ -55,6 +55,7 @@ class Add extends Component {
   };
 
   handleSubmit = async e => {
+    e.target.disabled = true;
     const data = await new FormData();
 
     await data.append(
@@ -243,7 +244,7 @@ class Add extends Component {
           )}
         </div>
         <div className="add-gig-submit">
-          <input type="submit" value="Submit" onClick={this.handleSubmit} />
+          <button onClick={this.handleSubmit}>Submit</button>
         </div>
       </div>
     );

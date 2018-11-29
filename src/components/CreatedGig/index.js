@@ -104,14 +104,16 @@ class CreatedGig extends Component {
                 alt="gig-address"
               />
             </a>
+            {this.state.applied === true && (
+              <div className="createdgig-applied-sucess">
+                Success! You have been applied to this gig
+              </div>
+            )}
             {type === "Artist" && (
               <button onClick={this.handleApply}>Apply</button>
             )}
             {type === "Host" && (
               <button onClick={this.handleApplicant}>See Applicants</button>
-            )}
-            {this.state.applied === true && (
-              <div>You have been applied to this gig</div>
             )}
           </Fragment>
         )}

@@ -34,16 +34,6 @@ class Gigs extends Component {
   }
 
   render() {
-    let isArray = false;
-    if (this.state.userGigs !== "") {
-      isArray = this.state.userGigs;
-      console.log(isArray);
-    } else {
-      isArray = [];
-      console.log("array false");
-      console.log(isArray);
-    }
-
     return (
       <div className="gigs-container">
         <h2>Your Gigs</h2>

@@ -53,3 +53,9 @@
 .single-gig-container button:disabled {
   background: #999;
 }
+
+.createdgig-applied-sucess {
+  background: green;
+  color: white;
+  padding: 2%;
+}
