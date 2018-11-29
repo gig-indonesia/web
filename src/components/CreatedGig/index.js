@@ -22,7 +22,7 @@ class CreatedGig extends Component {
       status: "pending",
       gigsId: this.state.gig.id
     };
-    Axios.post("http://localhost:5000/apply", data, {
+    Axios.post("https://gig-id.herokuapp.com/apply", data, {
       headers: {
         Authorization: `Bearer ${token}`
       }

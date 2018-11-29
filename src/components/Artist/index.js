@@ -12,7 +12,7 @@ class Artist extends Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/artist/search", {
+    Axios.get("https://gig-id.herokuapp.com/artist/search", {
       headers: {
         id: this.props.match.params.id
       }

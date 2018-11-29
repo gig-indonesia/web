@@ -50,7 +50,7 @@ class Register extends Component {
       };
 
       console.log(data);
-      Axios.post("http://localhost:5000/accounts/register", data)
+      Axios.post("https://gig-id.herokuapp.com/accounts/register", data)
         .then(res => {
           const artistProfile = {
             name: "New Artist",
@@ -76,7 +76,7 @@ class Register extends Component {
           const endpoint =
             this.state.accountType === "Artist" ? "artist" : "host";
 
-          Axios.post(`http://localhost:5000/${endpoint}`, profile)
+          Axios.post(`https://gig-id.herokuapp.com/${endpoint}`, profile)
             .then(res2 => {
               console.log(res2);
               this.props.history.push("/login");

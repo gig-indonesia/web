@@ -20,7 +20,7 @@ class Gigs extends Component {
       this.props.history.push("/login");
     } else {
       axios
-        .get(`http://localhost:5000/${endpoint}`, {
+        .get(`https://gig-id.herokuapp.com/${endpoint}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

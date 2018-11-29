@@ -24,12 +24,11 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-
     const token = localStorage.getItem("token");
     if (this.props.isAuthState === false) {
       this.props.history.push("/login");
     } else {
-      Axios.get("http://localhost:5000/artist/profile", {
+      Axios.get("https://gig-id.herokuapp.com/artist/profile", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -69,9 +68,9 @@ class Profile extends Component {
             </div>
 
             <Link to="/edit-profile">
-            <div className="edit-profile">
-              <button className="edit-button">Edit Profile</button>
-            </div>
+              <div className="edit-profile">
+                <button className="edit-button">Edit Profile</button>
+              </div>
             </Link>
 
             {this.state.artist.description ? (

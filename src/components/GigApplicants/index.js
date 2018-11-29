@@ -17,7 +17,7 @@ class GigApplicants extends Component {
     const token = localStorage.getItem("token");
     if (window.confirm("Are you sure want to approve this artist?")) {
       Axios.put(
-        "http://localhost:5000/apply",
+        "https://gig-id.herokuapp.com/apply",
         {
           status: "approved",
           gigsId: this.state.gig.id,
@@ -39,7 +39,7 @@ class GigApplicants extends Component {
     const token = localStorage.getItem("token");
     if (window.confirm("Are you sure want to reject this artist?")) {
       Axios.put(
-        "http://localhost:5000/apply",
+        "https://gig-id.herokuapp.com/apply",
         {
           status: "rejected",
           gigsId: this.state.gig.id,
@@ -62,11 +62,14 @@ class GigApplicants extends Component {
 
   handleRead = e => {
     const token = localStorage.getItem("token");
-    Axios.get(`http://localhost:5000/gigs/${this.props.match.params.id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`
+    Axios.get(
+      `https://gig-id.herokuapp.com/gigs/${this.props.match.params.id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       }
-    })
+    )
       .then(res => {
         console.log(res.data);
         this.setState({

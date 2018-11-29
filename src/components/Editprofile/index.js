@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+import axios from "axios";
 
 class EditProfile extends Component {
   constructor(props) {
@@ -23,6 +24,31 @@ class EditProfile extends Component {
 
   handleSubmit = async e => {
     const data = await new FormData();
+    await data.append(
+      "user_data",
+      JSON.stringify({
+        name: this.state.name,
+        about: this.state.about,
+        contact: this.state.contact,
+        artistType: this.state.artistType
+      })
+    );
+    const token = await localStorage.getItem("token");
+
+    await data.append("user_image", this.state.image);
+
+    axios
+      .put("https://gig-id.herokuapp.com/artist/updateprofile", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        console.log(res);
+        this.props.history.push("/");
+      })
+      .catch(err => console.log(err));
   };
 
   render() {

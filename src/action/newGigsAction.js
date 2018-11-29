@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchDataGigs = () => dispatch => {
   axios
-    .get("http://localhost:5000/gigs")
+    .get("https://gig-id.herokuapp.com/gigs")
     .then(res =>
       dispatch({
         type: FETCH_DATA_NEW_GIGS,

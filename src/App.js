@@ -31,7 +31,7 @@ class App extends Component {
   async componentDidMount() {
     const token = await localStorage.getItem("token");
     axios
-      .get(`http://localhost:5000/accounts/me`, {
+      .get(`https://gig-id.herokuapp.com/accounts/me`, {
         headers: { authorization: `Bearer ${token}` }
       })
       .then(data => {
@@ -43,7 +43,6 @@ class App extends Component {
 
   render() {
     return (
-
       <Router>
         <div className="background">
           <div className="container">

@@ -29,7 +29,7 @@ class Login extends Component {
   login = e => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/accounts/login`, {
+      .post(`https://gig-id.herokuapp.com/accounts/login`, {
         login: this.state.username,
         password: this.state.password
       })

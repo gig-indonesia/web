@@ -71,7 +71,7 @@ class Add extends Component {
     const token = await localStorage.getItem("token");
     await data.append("user_image", this.state.image);
     axios
-      .post("http://localhost:5000/gigs", data, {
+      .post("https://gig-id.herokuapp.com/gigs", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const searchArtists = query => dispatch => {
   axios
-    .get(`http://localhost:5000/artist?name=${query}`)
+    .get(`https://gig-id.herokuapp.com/artist?name=${query}`)
     .then(res => {
       console.log("search artists");
       dispatch({
