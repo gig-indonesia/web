@@ -58,6 +58,7 @@
 .small-link {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 .small-link a {
@@ -69,10 +70,11 @@
 .regtype {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   color: white;
-  background: rgb(86, 174, 224);
+  background: #4ca0eb;
   margin: 2% 0;
+  border-radius: 5px;
 }
 
 .regtype input[type="radio"] {
