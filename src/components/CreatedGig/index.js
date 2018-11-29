@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import Rest from "../../asset/rest.jpg";
 import "./index.css";
 import { connect } from "react-redux";
 import Axios from "axios";
@@ -47,7 +46,7 @@ class CreatedGig extends Component {
   }
   render() {
     const type = localStorage.getItem("type");
-
+    // console.log(this.state.gig.time);
     return (
       <div className="single-gig-container">
         {this.state.gig && (
@@ -72,10 +71,9 @@ class CreatedGig extends Component {
                   {new Intl.DateTimeFormat("id-ID", {
                     year: "numeric",
                     month: "long",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "numeric"
+                    day: "numeric"
                   }).format(new Date(this.state.gig.date))}
+                  {this.state.gig.time}
                 </div>
                 {/* <time dateTime="2018-02-14 20:00">
                   {this.state.gig.date} {this.state.gig.hour}
