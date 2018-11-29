@@ -19,7 +19,7 @@
   background-position: center;
 }
 
-input {
+.container-edit-profile input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -37,9 +37,11 @@ input {
 
 .edit-about p {
   padding-top: 30px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
-button {
+.container-edit-profile button {
   background: #4ca0eb;
   width: 80%;
   border-radius: 5px;
@@ -47,4 +49,23 @@ button {
   margin-top: 20px;
   padding: 10px 0;
   font-size: 20px;
+}
+
+.artist-type {
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px 15px 0px 0px;
+  width: 100%;
+}
+
+.artist-type input {
+  width: 20%;
+}
+
+.container-edit-profile label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
