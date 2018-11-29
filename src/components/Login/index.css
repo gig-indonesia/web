@@ -17,6 +17,11 @@
   height: 35px;
   border: 1px solid white;
   border-radius: 5px;
+  padding-left: 2%;
+}
+
+.login-type-in input::placeholder {
+  margin-left: 20%;
 }
 
 .login-type-in {

@@ -21,6 +21,10 @@
   padding-left: 2%;
 }
 
+.register-type-in input::placeholder {
+  padding-left: 2%;
+}
+
 .login-container form {
   width: 100%;
   display: flex;

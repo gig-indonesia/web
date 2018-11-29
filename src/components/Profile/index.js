@@ -61,7 +61,7 @@ class Profile extends Component {
                         }`
                       : avatarImg
                   }
-                  alt="adam"
+                  alt="artistPhoto"
                 />
                 <div>
                   <h3>{this.state.artist.name}</h3>
@@ -82,13 +82,11 @@ class Profile extends Component {
               </div>
             </Link>
 
-            {this.state.artist.description ? (
+            {this.state.artist.about ? (
               <div className="container-info">
                 <h2>About</h2>
                 <hr />
-                <p className="detail-description">
-                  {this.state.artist.description}
-                </p>
+                <p className="detail-description">{this.state.artist.about}</p>
               </div>
             ) : (
               <div className="container-info">
@@ -103,18 +101,14 @@ class Profile extends Component {
             <div className="container-info">
               <h2>Contact</h2>
               <hr />
-              <p className="detail-description">
+              <div className="detail-description">
                 {this.state.artist.email && (
-                  <React.Fragment>
-                    Email : {this.state.artist.email}
-                  </React.Fragment>
+                  <div>Email : {this.state.artist.email}</div>
                 )}
                 {this.state.artist.phone && (
-                  <React.Fragment>
-                    Phone : {this.state.artist.phone}
-                  </React.Fragment>
+                  <div>Phone : {this.state.artist.phone}</div>
                 )}
-              </p>
+              </div>
             </div>
 
             {this.state.artist.video && (
