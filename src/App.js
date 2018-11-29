@@ -36,7 +36,7 @@ class App extends Component {
       })
       .then(data => {
         console.log(data);
-        if (this.data.message === "You are logged in") {
+        if (token) {
           this.props.isAuth();
         } else {
           this.props.logout();
