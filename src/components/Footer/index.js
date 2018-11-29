@@ -10,6 +10,7 @@ class Footer extends Component {
   }
   render() {
     const { pathname } = this.props.location;
+    const type = localStorage.getItem("type");
     return (
       <div className="footer">
         <div className="footernav">
@@ -32,16 +33,18 @@ class Footer extends Component {
             </span>
           </Link>
 
-          <Link to="/add">
-            <span
-              className={classNames(
-                "footerIcon",
-                pathname === "/add" && "active"
-              )}
-            >
-              <i className="fas fa-plus" />
-            </span>
-          </Link>
+          {type === "Host" && (
+            <Link to="/add">
+              <span
+                className={classNames(
+                  "footerIcon",
+                  pathname === "/add" && "active"
+                )}
+              >
+                <i className="fas fa-plus" />
+              </span>
+            </Link>
+          )}
 
           <Link to="/gigs">
             <span
@@ -54,7 +57,7 @@ class Footer extends Component {
             </span>
           </Link>
 
-          <Link to="/notifications">
+          {/* <Link to="/notifications">
             <span
               className={classNames(
                 "footerIcon",
@@ -63,7 +66,7 @@ class Footer extends Component {
             >
               <i className="far fa-bell" />
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

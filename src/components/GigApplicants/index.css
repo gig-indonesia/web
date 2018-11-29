@@ -4,6 +4,8 @@
 
 .applied-gig-container h1 {
   font-size: 20px;
+  color: black;
+  text-align: left;
 }
 
 .applied-gig-container h4 {
@@ -21,7 +23,7 @@
 }
 
 .applied-gig-artists div {
-  width: 33.33%;
+  width: 25%;
 }
 
 .applied-gig-approval {
@@ -29,6 +31,7 @@
 }
 .applied-artist-box {
   position: relative;
+  margin: 0 2%;
 }
 
 .applied-artist-box img {
@@ -44,7 +47,7 @@
   justify-content: center;
   max-width: 80%;
   position: absolute;
-  bottom: 2px;
+  /* bottom: 2px; */
   cursor: pointer;
   left: 5%;
 }
@@ -54,7 +57,7 @@
   text-align: center;
   color: white;
   border-radius: 5px 1px 1px 5px;
-  padding: 2px 0;
+  padding: 2% 20%;
   cursor: pointer;
 }
 
@@ -63,5 +66,15 @@
   text-align: center;
   color: white;
   border-radius: 1px 5px 5px 1px;
-  padding: 2px 0;
+  padding: 2% 20%;
+  cursor: pointer;
+}
+
+.fas {
+  pointer-events: none;
+}
+
+.empty-approved {
+  font-weight: bold;
+  margin: 2%;
 }

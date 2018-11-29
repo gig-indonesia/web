@@ -59,10 +59,18 @@
   color: white;
 }
 
+
 .login-container img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+
+.login-warning {
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  background: red;
+
 }

@@ -8,6 +8,11 @@ import { fetchDataArtists } from "../../action/newArtistsAction";
 import { fetchDataGigs } from "../../action/newGigsAction";
 import { Link } from "react-router-dom";
 
+const mapStateToProps = state => ({
+  newArtists: state.newArtists.newArtists,
+  newGigs: state.newGigs.newGigs
+});
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -27,44 +32,63 @@ class Home extends Component {
       slidesToShow: 5,
       slidesToScroll: 1
     };
+
+    let emptyArtist = null;
+    if (this.props.newArtists) {
+      emptyArtist = false;
+    } else {
+      emptyArtist = true;
+    }
+
+    let emptyGig = null;
+    if (this.props.newGigs) {
+      emptyGig = false;
+    } else {
+      emptyGig = true;
+    }
+
     return (
       <div className="home-container">
         <div className="home-artists-top">
           <h2>New Artists</h2>
-          <div>
+          {/* <div>
             <Link to="/search/artists">See More</Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="home-new-artists">
           <div>
             <Slider {...settings}>
-              {this.props.newArtists.map((artist, index) => (
-                <div key={`artist-${index}`}>
-                  <ArtistBox newArtists={artist} />
-                </div>
-              ))}
+              {!emptyArtist &&
+                this.props.newArtists.map((artist, index) => (
+                  <div key={`artist-${index}`}>
+                    <ArtistBox newArtists={artist} />
+                  </div>
+                ))}
             </Slider>
           </div>
         </div>
-        <h2>New Gigs</h2>
-        {this.props.newGigs.map((gig, index) => (
-          <GigBox key={`gigs-${index}`} newGigs={gig} />
-        ))}
-        <div className="home-gigs-see-more">
-          <button>
-            See More Gigs <i className="fas fa-arrow-right" />
-          </button>
+        <div className="home-gigs-top">
+          <h2>New Gigs</h2>
+          <div className="home-gigs-see-more">
+            <Link to="/gigs">
+              <button>Your Gigs</button>
+            </Link>
+            <Link to="/search">
+              <button>
+                Search More Gigs <i className="fas fa-arrow-right" />
+              </button>
+            </Link>
+          </div>
         </div>
+        {!emptyGig &&
+          this.props.newGigs.map((gig, index) => (
+            <GigBox key={`gigs-${index}`} newGigs={gig} />
+          ))}
       </div>
     );
   }
 }
-
-const mapStateToProps = state => ({
-  newArtists: state.newArtists.newArtists,
-  newGigs: state.newGigs.newGigs
-});
 
 export default connect(
   mapStateToProps,

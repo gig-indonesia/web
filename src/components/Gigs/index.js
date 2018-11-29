@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./index.css";
 import GigBox from "../SmallComponents/GigBox";
 import axios from "axios";
-// import { connect } from "react-redux";
-// import { fetchDataArtists } from "../../action/newArtistsAction";
-// import { fetchDataGigs } from "../../action/newGigsAction";
+import { connect } from "react-redux";
 
 class Gigs extends Component {
   constructor(props) {
@@ -14,40 +12,70 @@ class Gigs extends Component {
     };
   }
 
-  async componentDidMount() {
-    await axios
-      .get("https://gig-id.herokuapp.com/host/1")
-      .then(res => {
-        console.log(res);
-        this.setState({ userGigs: res.data.Gigs });
-      })
-      .catch(err => console.log(err));
+  componentDidMount() {
+    const type = localStorage.getItem("type");
+    const endpoint = type === "Artist" ? "artist/applied" : "host/gigcreated";
+    const token = localStorage.getItem("token");
+    if (this.props.isAuth === false) {
+      this.props.history.push("/login");
+    } else {
+      axios
+        .get(`https://gig-id.herokuapp.com/${endpoint}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(res => {
+          console.log(res);
+          this.setState({ userGigs: res.data.Gigs });
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   render() {
+    let isArray = false;
+    if (this.state.userGigs !== "") {
+      isArray = this.state.userGigs;
+      console.log(isArray);
+    } else {
+      isArray = [];
+      console.log("array false");
+      console.log(isArray);
+    }
+
     return (
       <div className="gigs-container">
         <h2>Your Gigs</h2>
-        {this.state.userGigs !== "" &&
-          this.state.userGigs.map((gig, index) => (
-            <GigBox key={`gigs-${index}`} newGigs={gig} />
-          ))}
-        {/* {this.state.userGigs.map((gig, index) => (
-          <GigBox key={`gigs-${index}`} newGigs={gig} />
-        ))} */}
+
+        {this.state.userGigs !== "" ? (
+          this.state.userGigs.length === 0 ? (
+            <div>You have no any gig</div>
+          ) : null
+        ) : null}
+
+        {this.state.userGigs !== ""
+          ? this.state.userGigs.length > 0
+            ? this.state.userGigs.map((gig, index) => (
+                <GigBox key={`gigs-${index}`} newGigs={gig} />
+              ))
+            : null
+          : null}
       </div>
     );
   }
 }
 
-// const mapStateToProps = state => ({
-//   newArtists: state.newArtists.newArtists,
-//   newGigs: state.newGigs.newGigs
-// });
+const mapStateToProps = state => ({
+  isAuth: state.isAuth.isAuth
+});
 
 // export default connect(
 //   mapStateToProps,
 //   { fetchDataArtists, fetchDataGigs }
 // )(Gigs);
 
-export default Gigs;
+export default connect(
+  mapStateToProps,
+  {}
+)(Gigs);

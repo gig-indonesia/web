@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+import axios from "axios";
 
 class EditProfile extends Component {
   constructor(props) {
@@ -7,9 +8,9 @@ class EditProfile extends Component {
     this.state = {
       image: null,
       about: "",
-      skills: "",
+      name: "",
       contact: "",
-      email: ""
+      artistType: ""
     };
   }
   handleImageChange = e => {
@@ -23,6 +24,31 @@ class EditProfile extends Component {
 
   handleSubmit = async e => {
     const data = await new FormData();
+    await data.append(
+      "user_data",
+      JSON.stringify({
+        name: this.state.name,
+        about: this.state.about,
+        contact: this.state.contact,
+        artistType: this.state.artistType
+      })
+    );
+    const token = await localStorage.getItem("token");
+
+    await data.append("user_image", this.state.image);
+
+    axios
+      .put("https://gig-id.herokuapp.com/artist/updateprofile", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => {
+        console.log(res);
+        this.props.history.push("/");
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -57,6 +83,36 @@ class EditProfile extends Component {
         />
 
         <div className="edit-about">
+          <p>Name</p>
+          <input
+            className="edit-text-area"
+            placeholder="Your Name / Your Group Name"
+            type="text"
+            name="name"
+            onChange={this.handleOnChange}
+            value={this.state.name}
+          />
+          <p>Artist Type</p>
+          <div className="artist-type">
+            <input
+              type="radio"
+              name="artistType"
+              id="soloType"
+              value="solo"
+              onClick={this.handleOnChange}
+            />
+            <label htmlFor="soloType">Solo</label>
+
+            <input
+              type="radio"
+              name="artistType"
+              id="groupType"
+              value="group"
+              onClick={this.handleOnChange}
+            />
+            <label htmlFor="groupType">Group</label>
+          </div>
+
           <p>About</p>
           <input
             placeholder="About"
@@ -66,20 +122,10 @@ class EditProfile extends Component {
             value={this.state.about}
           />
 
-          <p>Skills</p>
+          <p>Contact</p>
           <input
             className="edit-text-area"
-            placeholder="Skills"
-            type="text"
-            name="skills"
-            onChange={this.handleOnChange}
-            value={this.state.skills}
-          />
-
-          <p>contact</p>
-          <input
-            className="edit-text-area"
-            name="Phone"
+            name="contact"
             placeholder="Phone number"
             type="text"
             onChange={this.handleOnChange}
