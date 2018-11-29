@@ -16,6 +16,13 @@
   font-size: 14px;
 }
 
+.applied-applicant-div h4 {
+  color: #4ca0eb;
+  border-bottom: 2px solid #4ca0eb;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
 .applied-gig-artists {
   display: flex;
   flex-wrap: wrap;
@@ -77,4 +84,9 @@
 .empty-approved {
   font-weight: bold;
   margin: 2%;
+  /* color: ; */
+}
+
+.applied-gig-container h1 {
+  color: #4ca0eb;
 }
