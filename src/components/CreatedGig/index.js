@@ -68,12 +68,14 @@ class CreatedGig extends Component {
                   }).format(this.state.gig.budget)}
                 </div>
                 <div>
-                  {new Intl.DateTimeFormat("id-ID", {
+                  {new Intl.DateTimeFormat("en-ID", {
                     year: "numeric",
                     month: "long",
-                    day: "numeric"
+                    day: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                    timeZone: "UTC"
                   }).format(new Date(this.state.gig.date))}
-                  {this.state.gig.time}
                 </div>
                 {/* <time dateTime="2018-02-14 20:00">
                   {this.state.gig.date} {this.state.gig.hour}

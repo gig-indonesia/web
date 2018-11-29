@@ -51,6 +51,9 @@ class Home extends Component {
         <div className="home-gigs-top">
           <h2>New Gigs</h2>
           <div className="home-gigs-see-more">
+            <Link to="/gigs">
+              <button>Your Gigs</button>
+            </Link>
             <Link to="/search">
               <button>
                 Search More Gigs <i className="fas fa-arrow-right" />

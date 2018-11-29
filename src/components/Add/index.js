@@ -62,8 +62,7 @@ class Add extends Component {
       JSON.stringify({
         title: this.state.title,
         budget: this.state.budget,
-        date: this.state.date,
-        time: this.state.time,
+        date: `${this.state.date}T${this.state.time}.00Z`,
         description: this.state.description,
         location: this.state.location,
         latLng: this.state.latLng
@@ -80,7 +79,7 @@ class Add extends Component {
       })
       .then(res => {
         console.log(res);
-        this.props.history.push("/gigs");
+        this.props.history.push("/");
       })
       .catch(err => console.log(err));
   };
