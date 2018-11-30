@@ -6,3 +6,21 @@
 .gigs-container h2 {
   font-size: 18px;
 }
+
+.cancel-gig {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 10px;
+}
+
+.cancel-gig button {
+  padding: 5px;
+  background: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.gig-relative {
+  position: relative;
+}

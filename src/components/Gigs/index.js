@@ -12,7 +12,21 @@ class Gigs extends Component {
     };
   }
 
-  componentDidMount() {
+  cancelGig = (e, id) => {
+    const token = localStorage.getItem("token");
+    if (window.confirm("Are you sure want to cancel this gig?")) {
+      axios
+        .delete(`https://gig-id.herokuapp.com/gigs/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(res => this.getItem())
+        .catch(err => console.log(err));
+    }
+  };
+
+  getItem = () => {
     const type = localStorage.getItem("type");
     const endpoint = type === "Artist" ? "artist/applied" : "host/gigcreated";
     const token = localStorage.getItem("token");
@@ -31,9 +45,14 @@ class Gigs extends Component {
         })
         .catch(err => console.log(err));
     }
+  };
+
+  componentDidMount() {
+    this.getItem();
   }
 
   render() {
+    const type = localStorage.getItem("type");
     return (
       <div className="gigs-container">
         <h2>Your Gigs</h2>
@@ -47,7 +66,16 @@ class Gigs extends Component {
         {this.state.userGigs !== ""
           ? this.state.userGigs.length > 0
             ? this.state.userGigs.map((gig, index) => (
-                <GigBox key={`gigs-${index}`} newGigs={gig} />
+                <div className="gig-relative">
+                  {type === "Host" && (
+                    <div className="cancel-gig">
+                      <button onClick={e => this.cancelGig(e, gig.id)}>
+                        Cancel Gig
+                      </button>
+                    </div>
+                  )}
+                  <GigBox key={`gigs-${index}`} newGigs={gig} />
+                </div>
               ))
             : null
           : null}
